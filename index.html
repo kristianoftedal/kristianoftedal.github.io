@@ -1,7 +1,7 @@
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
 
 <div class="question">
-    <button class="btn btn-default" onclick="click">Kan jeg si neger?</button>
+    <button class="btn btn-default btn-xlarge" onclick="click">Kan jeg si neger?</button>
 </div>
 
 <div class="janeikanskje">
@@ -13,14 +13,22 @@
 
 <script>
 
-function click() {
-    document.getElementByClass("janeikanskje").style.display="block";
-    document.getElementByClass("question").style.display="none";
-}
+    function click() {
+        document.getElementByClass("janeikanskje").style.display="block";
+        document.getElementByClass("question").style.display="none";
+    }
 </script>
 
 <style>
-    body {
+button {
+    font-family: 'Open Sans', sans-serif;    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding: 20px;
+}
+
+body {
     background: black;
 }
 a {
@@ -39,5 +47,13 @@ a {
     top: 50%;
     left: 50%;
     padding: 20px;
+}
+.btn-xlarge {
+    padding: 18px 28px;
+    font-size: 22px; //change this to your desired size
+    line-height: normal;
+    -webkit-border-radius: 8px;
+       -moz-border-radius: 8px;
+            border-radius: 8px;
 }
 </style>
