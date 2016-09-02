@@ -1,10 +1,10 @@
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
 
-<div class="question">
+<div id="question" class="question">
     <button class="btn btn-default btn-xlarge" onclick="click()">Kan jeg si neger?</button>
 </div>
 
-<div class="janeikanskje">
+<div id="answer" class="janeikanskje">
          NEI
     <a href="https://kristianoftedal.github.io" style="color:#fffff; font-size=12px">Er det greit å si jævla jøde?</a>
     <a href="https://kristianoftedal.github.io" style="color:#fffff; font-size=12px">Er det greit å si homse ?</a>
@@ -14,8 +14,8 @@
 <script>
 
     function click() {
-        document.getElementByClassName("janeikanskje").style.display="block";
-        document.getElementByClassName("question").style.display="none";
+        document.getElementById("question").style.display="block";
+        document.getElementById("answer").style.display="none";
     }
 </script>
 
