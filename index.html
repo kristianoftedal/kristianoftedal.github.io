@@ -1,4 +1,8 @@
-<link rel="stylesheet" type="text/css" href="/css/styles.css" />
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+
+<div class="question">
+    <button class="btn btn-default" onclick="click">Kan jeg si neger?</button>
+</div>
 
 <div class="janeikanskje">
          NEI
@@ -6,6 +10,14 @@
     <a href="https://kristianoftedal.github.io" style="color:#fffff; font-size=12px">Er det greit å si homse ?</a>
     <a href="https://kristianoftedal.github.io" style="color:#fffff; font-size=12px">Er det greit å si pakkis?</a>
 </div>
+
+<script>
+
+function click() {
+    document.getElementByClass("janeikanskje").style.display="block";
+    document.getElementByClass("question").style.display="none";
+}
+</script>
 
 <style>
     body {
@@ -18,6 +30,7 @@ a {
     text-align: center;
 }
 .janeikanskje {
+    display: none;
     font-size: 128px;
     font-family: 'Open Sans', sans-serif;
     color: white;
