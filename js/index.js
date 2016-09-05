@@ -9,6 +9,11 @@ function getParameterByName(name, url) {
 }
 
 (function() {
+
+   if (window.location.pathname == "/ja/index1.html") {
+       changeDisplay();
+       return; 
+   }
    var skjellsord = getParameterByName("skjellsord");
    if (skjellsord == null)
         skjellsord = "neger";
