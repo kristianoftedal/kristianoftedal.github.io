@@ -25,7 +25,7 @@ body {
 }
 a {
     color:#ffffff;
-    font-size: 12px;
+    font-size: 40px !important;
     display: block;
     text-align: center;
 }
@@ -33,7 +33,7 @@ a {
 }
 .btn-xlarge {
     padding: 18px 28px;
-    font-size: 113px; 
+    font-size: 80px; 
     line-height: normal;
     -webkit-border-radius: 8px;
        -moz-border-radius: 8px;
