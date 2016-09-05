@@ -34,9 +34,11 @@ a {
 }
 
 .janeikanskje {
+    display: none;
     text-align: center;
     color: white !important;
     margin-bottom: 20%;
+    font-size: 30%;
 }
 .btn-xlarge {
     padding: 18px 28px;
@@ -45,4 +47,7 @@ a {
     -webkit-border-radius: 8px;
        -moz-border-radius: 8px;
             border-radius: 8px;
+}
+#other-stuff {
+    display: none;
 }

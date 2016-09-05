@@ -19,5 +19,6 @@ function getParameterByName(name, url) {
 
 function changeDisplay() {
     document.getElementById("answer").style.display="block";
+    document.getElementById("other-stuff").style.display="block";
     document.getElementById("question").style.display="none";
 }
