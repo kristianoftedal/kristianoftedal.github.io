@@ -9,7 +9,9 @@ function getParameterByName(name, url) {
 }
 
 (function() {
-   var skjellsord = getParameterByName("skjellsord")
+   var skjellsord = getParameterByName("skjellsord");
+   if (skjellsord == null)
+        skjellsord = "neger";
    var button = document.getElementById("button");
    button.innerHTML = "kan jeg si " + skjellsord + "?";
 })();
