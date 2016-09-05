@@ -29,7 +29,10 @@ a {
     display: block;
     text-align: center;
 }
+
 .janeikanskje {
+    text-align: center;
+    color: white !important;
 }
 .btn-xlarge {
     padding: 18px 28px;
