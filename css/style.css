@@ -1,5 +1,30 @@
+.flat-primary-butt {
+    background: #1abc9c !important;
+}
+
+.flat-primary-grad-butt {
+    background-image: linear-gradient(#1ABC9C 50%, #16A085 50%) !important;
+}
+.flat-butt {
+    display: inline-block;
+    margin: 0 5px;
+    border-radius: 6px;
+    border: 0;
+    color: #FFF;
+    cursor: pointer;
+    outline: 0;
+}
+
+
+.question {    
+    font-family: 'Open Sans', sans-serif;    
+    position: absolute;
+    top: 42%;
+    left: 7
+}
+
 body {
-    background: black;
+    background: #2f4154;
 }
 a {
     color:#ffffff;
@@ -8,12 +33,20 @@ a {
     text-align: center;
 }
 .janeikanskje {
-    font-size: 128px;
-    font-family: 'Open Sans', sans-serif;
+    display: none;
+    font-size: 110px;
     color: white;
     margin: -120px 0 0 -100px;
     position: absolute;
-    top: 42%;
-    left: 7%;
+    top: 50%;
+    left: 50%;
     padding: 20px;
+}
+.btn-xlarge {
+    padding: 18px 28px;
+    font-size: 113px; 
+    line-height: normal;
+    -webkit-border-radius: 8px;
+       -moz-border-radius: 8px;
+            border-radius: 8px;
 }
