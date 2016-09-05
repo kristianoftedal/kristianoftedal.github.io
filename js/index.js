@@ -11,7 +11,7 @@ function getParameterByName(name, url) {
 (function() {
    var skjellsord = getParameterByName("skjellsord")
    var button = document.getElementById("button");
-   button.innerHTML = skjellsord;
+   button.innerHTML = "kan jeg si " + skjellsord + "?";
 })();
 
 
