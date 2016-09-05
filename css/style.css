@@ -27,6 +27,10 @@ body {
     background: #2f4154;
 }
 
+.nav-list-bricks > li.active > a, .nav-list-bricks > li.active > a:hover, .nav-list-bricks > li.active > a:focus {
+    font-size: 38px;
+}
+
 .janeikanskje {
     display: none;
     text-align: center;
