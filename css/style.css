@@ -26,12 +26,6 @@
 body {
     background: #2f4154;
 }
-a {
-    color:#ffffff;
-    font-size: 40px !important;
-    display: block;
-    text-align: center;
-}
 
 .janeikanskje {
     display: none;
