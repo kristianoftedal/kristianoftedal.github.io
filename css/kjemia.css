@@ -10,9 +10,17 @@
 
 }
 
+.spacing {
+    margin-top: 10%
+}
 .background-wrapper {
     width: 100%;
-    height: 85%;
+    height: 60%;
+}
+
+.center-img {
+    display:block;
+    margin:auto;
 }
 
 .background-img {
@@ -42,4 +50,23 @@ body {
 
 .logo-font {
     font-family: 'hattori_hanzolight';
+}
+
+.user {
+  display: block;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  margin-bottom: 20px; 
+}
+
+.one {
+  background-image: url('../img/ryan.jpg');
+}
+
+.two {
+  background-image: url('cj.jpg');
 }
