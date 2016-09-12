@@ -10,9 +10,28 @@
 
 }
 
+.background-wrapper {
+    width: 100%;
+}
+
 .background-img {
     max-width: 100%;
 }
+
+.overlay-text {
+    font-family: 'hattori_hanzolight';
+   position: absolute; 
+   top: 200px; 
+   left: 100px;      
+    background-color: white;
+    color: #34495e !important;
+        padding: 16px 20px;
+}
+
+.intro {
+    margin-top: 10%;
+}
+
 body {
     background-color: #34495e !important;
 }
