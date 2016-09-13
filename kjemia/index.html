@@ -65,7 +65,7 @@
                                 <li>Løsningsforslag til alle oppgaver</li>
                             </ul>
                             <p>Kun 600 kr</p>
-                            <a class="btn btn-primary">Bestill</a>
+                            <a class="btn btn-primary" data-toggle="modal" data-target="#kompendiumModal">Bestill</a>
                         </div>
                         <div class="col-md-6">
                             <img class="img-rounded img-responsive center-img" src="https://sway.com/s/FvCeMDe45kwqu65s/images/YjGIS8_Onm6Vv1?quality=400&allowAnimation=false"/>
@@ -75,22 +75,24 @@
             </div>
             <div id="privat" class="spacing row">
                 <div class="jumbotron">
-                    <div class="col-md-6">
-                            <h4>Privatundervisning</h4>
-                            <p> 
-                                Din egen lærer i det tempo som passer akkurat din progresjon
-                            </p>
-                            <ul>
-                                <li>Undervisning tilpasset akkurat deg</li>
-                                <li>Coaching før eksamen</li>
-                                <li>Realistisk eksamen simulering</li>
-                            </ul>
-                            <p>Kr 2500 pr time</p>
-                            <a class="btn btn-primary">Bestill</a>
-                        </div>
+                    <div class="row">
                         <div class="col-md-6">
-                            <img class="img-rounded img-responsive center-img" src="https://sway.com/s/FvCeMDe45kwqu65s/images/MN0aktTNFdF1EC?quality=320&allowAnimation=false"/>
-                        </div> 
+                                <h4>Privatundervisning</h4>
+                                <p> 
+                                    Din egen lærer i det tempo som passer akkurat din progresjon
+                                </p>
+                                <ul>
+                                    <li>Undervisning tilpasset akkurat deg</li>
+                                    <li>Coaching før eksamen</li>
+                                    <li>Realistisk eksamen simulering</li>
+                                </ul>
+                                <p>Kr 2500 pr time</p>
+                                <a class="btn btn-primary" data-toggle="modal" data-target="#privatundervisningModal">Bestill</a>
+                            </div>
+                            <div class="col-md-6">
+                                <img class="img-rounded img-responsive center-img" src="https://sway.com/s/FvCeMDe45kwqu65s/images/MN0aktTNFdF1EC?quality=320&allowAnimation=false"/>
+                            </div> 
+                        </div>
                     </div>
                 </div>
             </div>
@@ -113,7 +115,7 @@
                         VALUE!
                     </p>
                     <img src="https://tse1.mm.bing.net/th?id=OIP.M2df56a4be989679af532a757c51986ffo0&pid=Api"/>
-                    <button class="btn btn-primary">Bestill</button>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#workshopModal">Bestill</button>
                 </div>
             </div>
 
@@ -146,24 +148,78 @@
                 </div>
             </div>
         </div>
-        <div class="modal fade" id="kompendiumModal" tabindex="-1" role="dialog" aria-labelledby="kompendiumLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
+        <div class="modal fade" id="kompendiumModal" tabindex="-1" role="dialog"  aria-hidden="true">
+            <div class="modal-dialog">
                 <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                    </button>
-                    <h4 class="modal-title" id="kompendiumLabel">Bestill kompendium</h4>
-                </div>
-                <div class="modal-body">
-                    
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
+                    <div class="modal-header">
+                        <button type="button" class="close fui-cross" data-dismiss="modal" aria-hidden="true"></button>
+                        <h4 class="modal-title">Bestill kompendium</h3>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <input type="text" placeholder="Ditt navn" class="form-control input-lg"  />
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="Din epost" class="form-control input-lg"  />
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <a href="#"  data-dismiss="modal" class="btn btn-default btn-wide">Avbryt</a>
+                        <a href="#" class="btn btn-primary btn-wide">Send bestilling</a>
+                    </div>
                 </div>
             </div>
+        </div>
+
+        <div class="modal fade" id="workshopKompendium" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close fui-cross" data-dismiss="modal" aria-hidden="true"></button>
+                        <h4 class="modal-title">Bestill workshop</h3>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <input type="text" placeholder="Ditt navn" class="form-control input-lg"  />
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="Din epost" class="form-control input-lg"  />
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <a href="#" class="btn btn-default btn-wide">Avbryt</a>
+                        <a href="#" class="btn btn-primary btn-wide">Send bestilling</a>
+                    </div>
+                </div>
             </div>
+        </div>
+        <div class="modal fade" id="privatundervisningModal" tabindex="-1" role="dialog"  aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close fui-cross" data-dismiss="modal" aria-hidden="true"></button>
+                        <h4 class="modal-title">Bestill workshop</h3>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <input type="text" placeholder="Ditt navn" class="form-control input-lg"  />
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="Din epost" class="form-control input-lg"  />
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <a href="#" class="btn btn-default btn-wide">Avbryt</a>
+                        <a href="#" class="btn btn-primary btn-wide">Send bestilling</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
 <html>
