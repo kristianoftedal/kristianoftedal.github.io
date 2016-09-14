@@ -15,8 +15,47 @@
     height: 100% !important;
 }
 
+.reviews {
+    width: 100%;
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.review {
+    width: 25%;
+    padding: 30px 20px 0px 20px;
+
+}
+
+.review-one {
+    
+    background-color: #446CB3;
+}
+
+.review-two {
+    background-color: #2980b9;
+}
+
+.review-three {
+    background-color: #3498db;
+}
+
+.review-four {
+    background-color: #22A7F0;
+}
+
 .blackboard {
     width: 88% !important;
+}
+
+.quote {
+    color: #ecf0f1;
+    border-left: none !important;
+}
+
+footer {
+    color: #ecf0f1 !important;
 }
 
 .modal{z-index: 1;}
