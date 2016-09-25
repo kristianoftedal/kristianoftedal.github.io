@@ -1,0 +1,58 @@
+@font-face{ 
+	font-family: 'Raleway';
+	src: url('fonts/raleway_thin-webfont.eot');
+	src: url('fonts/raleway_thin-webfont.woff') format('woff'),
+	     url('fonts/raleway_thin-webfont.ttf') format('truetype'),
+	     url('fonts/raleway_thin-webfont.svg#fonts/raleway_thin-webfont') format('svg');
+}
+body {
+    background-color: black;
+    letter-spacing: 3px;
+    font-weight: bolder
+}
+
+.invite-body{
+    font-size: 10px;
+    
+}
+
+.invite-header {
+    margin-top: 100px;
+}
+
+.invite-container {
+    font-family: 'Raleway';
+    margin: 160px 70px 400px 200px;
+    padding: 50px 40px 40px 90px;
+    height: 300px;
+    width: 550px;
+    text-transform: uppercase;
+    background-color: white;
+}
+.elisabeth {
+    color: #7f8c8d;
+    margin-right: 20px;
+}
+
+.separator {
+    color: #e74c3c;
+    margin-right: 20px;
+}
+
+.kristian {
+}
+
+.background-invite {
+    height: 100%;
+    width: 100%;
+}
+
+.adresse {
+    text-transform: uppercase;
+    color: black;
+    font-size: 10px;
+}
+
+.dresscode{
+    color: black;
+}
