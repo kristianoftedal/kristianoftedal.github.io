@@ -7,38 +7,38 @@
 }
 body {
     background-color: black;
-    letter-spacing: 3px;
-    font-weight: bolder
-}
-
-.invite-body{
-    font-size: 11px;
+    letter-spacing: 2px;
+    font-weight: bolder;
+    text-align: right
 }
 
 .invite-header {
-    margin-top: 100px;
+}
+
+.invite-body{
+    font-size: 10px;
 }
 
 .invite-container {
     font-family: 'Raleway';
-    margin: 140px 70px 400px 200px;
-    padding: 40px 40px 40px 90px;
-    height: 300px;
-    width: 550px;
+    margin: 40px 40px 40px 40px;
+    padding: 40px 30px 40px 40px;
+    height: 380px;
+    width: 210px;
     text-transform: uppercase;
     background-color: white;
 }
-.elisabeth {
+.menupart-one {
     color: #7f8c8d;
-    margin-right: 20px;
+}
+
+.menupart-two {
+
 }
 
 .separator {
     color: #e74c3c;
     margin-right: 20px;
-}
-
-.kristian {
 }
 
 .background-invite {
@@ -54,4 +54,8 @@ body {
 
 .dresscode{
     color: black;
+}
+
+.nordic {
+    font-weight: 100;
 }
