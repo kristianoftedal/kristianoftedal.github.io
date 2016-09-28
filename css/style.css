@@ -48,7 +48,7 @@ body {
 }
 
 .hero {
-  background: url("../img/background.min.jpg") no-repeat center center;
+  background: url("../img/background-min.jpg") no-repeat center center;
   background-size: cover;
 	filter: grayscale(100%);
   height: 100vh; }
@@ -151,4 +151,10 @@ a.ghost-button-full-color {
 
 .btn {
     border-radius: 0px !important;
+}
+
+@media (max-width: 600px) {
+  .email {
+    text-overflow: ellipsis;
+  }
 }
