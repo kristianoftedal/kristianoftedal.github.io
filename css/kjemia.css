@@ -9,6 +9,9 @@
     font-style: normal;
 
 }
+.container {
+    width: 1300px;  
+}
 
 .modal-backdrop{
     z-index: -1;
@@ -47,6 +50,10 @@
 
 .blackboard {
     width: 88% !important;
+}
+
+.workshop-img {
+    margin-top: 56px;
 }
 
 .quote {
