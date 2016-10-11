@@ -81,9 +81,10 @@ footer {
 
 .overlay-text {
     font-family: 'hattori_hanzolight';
-   position: absolute; 
-   top: 200px; 
-   left: 100px;      
+    position: absolute; 
+    top: 200px; 
+    left: 1000px;      
+    opacity: 0.9;
     background-color: white;
     color: #34495e !important;
         padding: 16px 20px;

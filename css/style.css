@@ -169,6 +169,10 @@ a.ghost-button-full-color {
     border-radius: 0 !important;
 }
 
+.inverted-logo {
+	filter: invert(100%);
+}
+
 .row {
     margin-bottom: 70px;    
     width: 70%;

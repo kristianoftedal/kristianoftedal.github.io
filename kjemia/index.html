@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>	
+        <title>Kjemia</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
@@ -39,35 +40,35 @@
             <h2 class="overlay-text">- Alt er kjemi!</h2>
         </div>
         <div class="reviews">
-            <div class="review review-one">
+            <div class="review review-one" data-toggle="modal" data-target="#reviewOneModal">
                 <blockquote class="quote">
-                    <p><a href="#">Jeg fikk sekser kun fordi gutta i Kjemia er griseflinke!!!</a></p>
-                    <footer>Kristian (18)<cite title="Source Title">3KJ Hartvig Nissen</cite></footer>
+                    <p>Håvard og Carl-Joachim formidler kunnskap som er eksamensrelatert og kan en god del hverdagseksempler.</p>
+                    <footer>Ummar (20) tidl. elev<cite title="Source Title"> – Profesjonsstudie tannlege, UiO</cite></footer>
                 </blockquote>
             </div>
             <div class="review review-two">
                 <blockquote class="quote">
-                    <p>Hadde ikke kommet inn på medisin uten deres hjelp! :)</p>
-                    <footer>Elisabeth (19) tidl. elev, <cite title="Source Title">Medisinstudent NTNU</cite></footer>
+                    <p>Håvard hjalp meg med å mestre kjemi og få toppkarakter på eksamen.</p>
+                    <footer>Shan (20) tidl. elev <cite title="Source Title"> – Molekylærbiologi, UiO</cite></footer>
                 </blockquote>
             </div>
 
             <div class="review review-three">
                 <blockquote class="quote">
-                    <p>Kompendiumet er utrolig bra! Alt jeg trengte for en bra eksamensprep</p>
-                    <footer>Carl- (20) <cite title="Source Title">Loffen</cite></footer>
+                    <p>Kjemi 2 var et krevende fag, men med Carl-Joachims gode undervisning klarte jeg å få toppkarakter i faget.</p>
+                    <footer>Mahad (20) <cite title="Source Title"> – Medisinstudent, UiO</cite></footer>
                 </blockquote>
             </div>
 
             <div class="review review-four">
                 <blockquote class="quote">
-                    <p>Bra opplegg. Nuff Said</p>
-                    <footer>Mr. T (53) <cite title="Source Title">Han i A-Team</cite></footer>
+                    <p>Ønsker du å bli ekspert i kjemi søker du definitivt etter disse to kjemikongene. </p>
+                    <footer>Marwa (20) tidl. elev<cite title="Source Title">– Medisinstudent, UiO</cite></footer>
                 </blockquote>
             </div>
         </div>
 
-        <div class="container">
+        <div class="container spacing">
             <div class="row">
                 <div class="jumbotron">
                     <h1>Kjemia, kort fortalt</h1>
@@ -190,27 +191,22 @@
                     <div class="row">
                         <h4>Om oss</h4>
                         <div class="col-md-6">
-                            <h4>Håvard Ryan</h4>
-                            <ul>
-                                <li>Eksaminator, har eksaminert over 3000 elever</li>
-                                <li>X år erfaring som lærer, jobber til daglig på Sonans</li>
-                                <li>Mastergrad i Kjemia, UiO</li>
-                                <li>Norgesmester i Wrestling</li>
-                            </ul>
                             <div class="user one center-img">
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <h4>Carl-Joakim Isachsen</h4>
-                            <ul>
-                                <li>Eksaminator, har eksaminert over 3000 elever</li>
-                                <li>X år erfaring som lærer, jobber til daglig på Akademiet</li>
-                                <li>Mastergrad i Molekylær biologi, UiO</li>
-                                <li>Musiker</li>
-                            </ul>
                             <div class="user two center-img">
                             </div>
                         </div>
+                    </div>
+                    <div class="row">
+                        <p>Håvard Ryan og Carl-Joachim Isachsen jobber til daglig som kjemilærere ved henholdsvis Sonans- og Akademiet vgs. på Bislett i Oslo. Tilsammen har de over 8 års erfaring som lærere i kjemi 1 og 2, der begge har hatt elever som har gått ut med både toppkarakterer i standpunkt og på eksamen. De har ved flere anledninger hatt elever som har kommet rett inn på medisinstudiet i Norge og i utlandet. </p>
+
+                        <p>I tillegg til å drive daglig undervisning i kjemifagene, og gi en-til-en privatundervisning på kveldstid, har disse to mange års erfaring som muntlige og skriftlige sensorer i kjemi. Tilsammen har de vært sensorer for over 3000 kandidater og vet godt hva man må fokusere på til muntlig-praktisk- og skriftlig eksamen. </p>
+
+                        <p>Begge er utdannet ved og har en mastergrad fra Universitet i Oslo. Håvard Ryan og Carl-Joachim Isachsen, er til forskjell fra de fleste andre kjemilærere i starten av 30-årene, og ble kjent med hverandre da de begynte på bachelorprogrammet for molekylærbiologi og biologisk kjemi i 2005. Håvard Ryan har en mastergrad i Toksikologi fra Folkehelseinstituttet og Carl-Joachim Isachsen har en mastergrad i Fysiologi og Nevrobiologi fra Institutt for biovitenskap. Begge har praktisk-pedagogisk utdanning fra Universitetet i Oslo og er lektorer med opprykk.</p> 
+
+                        <p>Ønsker du å lese mer om hva tidligere elever har sagt om Håvard Ryan og Carl-Joachim Isachsen, klikk deg inn på elevenes uttalelser øverst på siden.</p>
                     </div>
                 </div>
             </div>
@@ -356,6 +352,27 @@
                     <div class="modal-footer">
                         <a href="#" data-dismiss="modal"  class="btn btn-default btn-wide">Avbryt</a>
                         <a href="#" data-dismiss="modal"  class="btn btn-primary btn-wide">Send forespørsel</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal spacing" id="reviewOneModal" tabindex="-1" role="dialog"  aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close fui-cross" data-dismiss="modal" aria-hidden="true"></button>
+                        <h4 class="modal-title">Ummar (20) tidl. elev – Profesjonsstudie tannlege, UiO</h3>
+                    </div>
+
+                    <div class="modal-body">
+                       <p>Håvard og Carl-Joachim formidler kunnskap som er eksamensrelatert og kan en god del hverdagseksempler som kan hjelpe deg med å forstå pensum. For en vanlig elev er det vanskelig å vite hva som er forskjellen mellom karakterene 4, 5 og 6. Det er liten forskjell i hva som skal til for å oppnå disse karakterene, men denne forskjellen kan avgjøre din fremtid. 
+De hjelper deg og stiller eksamensspørsmål som sensor kan stille.
+Jeg anbefaler deg å velge Håvard og Carl-Joachim som dine lærere dersom du ønsker å nå ditt mål. Enten det er å bestå faget eller å få toppkarakter for å komme inn på drømmestudiet. </p>
+                    </div>
+
+                    <div class="modal-footer">
+                        <a href="#" data-dismiss="modal" class="btn btn-default btn-wide">Avbryt</a>
+                        <a href="#" data-dismiss="modal" class="btn btn-primary btn-wide">Send forespørsel</a>
                     </div>
                 </div>
             </div>
