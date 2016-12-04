@@ -1,0 +1,85 @@
+body {
+    background-color: black;
+    letter-spacing: 2px;
+    font-weight: 100;
+    text-align: right
+}
+
+.invite-header {
+}
+
+.invite-body{
+    padding-top: 97px;
+    width: 93%;
+    font-size: 9px;
+}
+
+.invite-container {
+    font-family: 'Raleway';
+    margin: 40px 40px 40px 40px;
+    padding: 40px 35px 40px 45px;
+    height: 170px;
+    width: 360px;
+    text-transform: uppercase;
+    background-color: white;
+}
+.menupart-one {
+    color: #7f8c8d;
+}
+
+.menupart-two {
+
+}
+
+.separator {
+    color: #e74c3c;
+    margin-right: 20px;
+}
+
+.background-invite {
+    height: 100%;
+    width: 100%;
+}
+
+.adresse {
+    text-transform: uppercase;
+    color: black;
+    font-size: 10px;
+}
+
+.dresscode{
+    color: black;
+}
+
+.nordic {
+    font-weight: 100;
+}
+
+
+.elisabeth {
+    color: #7f8c8d;
+    margin-right: 10px;
+}
+
+.separator {
+    color: #e74c3c;
+    margin-right: 10px;
+}
+
+.kristian {
+}
+
+.transformed-header {
+    position: absolute;
+    top: 239px;
+    left: 455px;
+	float: right;
+    transform: rotate(-90deg);
+    white-space:nowrap;
+    display:block;
+    bottom:0;
+    width:20px;
+    height:20px;
+    letter-spacing: 6px !important;
+    font-size: 8px;
+}
