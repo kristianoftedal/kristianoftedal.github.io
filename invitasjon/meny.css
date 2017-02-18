@@ -5,7 +5,15 @@ body {
     text-align: right
 }
 
+p {
+    line-height: 20px;
+    font-size: 1em;
+    margin-top: 5px;
+    margin-bottom: 1px;
+}
+
 .invite-header {
+    margin-top: -16px;
 }
 
 .invite-body{
@@ -15,7 +23,7 @@ body {
 .invite-container {
     font-family: 'Raleway';
     margin: 40px 40px 40px 40px;
-    padding: 40px 35px 40px 45px;
+    padding: 40px 35px 40px 35px;
     height: 380px;
     width: 210px;
     text-transform: uppercase;
@@ -69,8 +77,8 @@ body {
 
 .transformed-header {
     position: absolute;
-    top: 390px;
-    left: 318px;
+    top: 366px;
+    left: 305px;
 	float: right;
     transform: rotate(-90deg);
     white-space:nowrap;
