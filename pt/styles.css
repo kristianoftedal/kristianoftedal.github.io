@@ -127,11 +127,9 @@ body {
 .second-logo {  
     z-index: 10;
     position: absolute;
-    top: 300px;
-    left: 230px;
     font-family: 'Lato';
-    font-size: 20px;
+    font-size: 24px;
     color: white;
-    top: 800px;
-    left: 800px;
+    top: 892px;
+    left: 888px;
 }
