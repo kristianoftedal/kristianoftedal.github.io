@@ -18,7 +18,7 @@ body {
     z-index: 10;
     background-color: #34495e;
     position: absolute;
-    width: 365px;
+    width: 362px;
     height: 10px;
 }
 
@@ -88,6 +88,7 @@ body {
     font-family: 'Lato';
     font-size: 40px;
     color: #34495e;
+    font-weight: 800;
 }
 .invite-container {
     font-family: 'Raleway';
