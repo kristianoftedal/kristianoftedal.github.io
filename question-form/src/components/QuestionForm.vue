@@ -120,10 +120,9 @@ export default {
   name: 'QuestionForm',
   computed: {
     savedQuestions() {
-      debugger;
       const questions = JSON.parse(localStorage.getItem('naturfagSpørsmål'));
       return questions;
-    }
+    },
   },
   methods: {
     addQuestion() {
@@ -133,15 +132,14 @@ export default {
       } else {
         questions = JSON.parse(localStorage.getItem('naturfagSpørsmål'));
       }
-      const question = JSON.stringify(this.question);
-      questions.push(this.question);
+      questions.push(JSON.stringify(this.question));
       const stringified = JSON.stringify(questions);
       localStorage.setItem('naturfagSpørsmål', stringified);
     },
     downloadFile() {
       const questions = JSON.parse(localStorage.getItem('naturfagSpørsmål'));
       const fileName = 'questions.json';
-      const data =  'data:text/json;charset=utf-8,' + encodeURI(JSON.stringify(questions));
+      const data = 'data:text/json;charset=utf-8,@' + encodeURI(JSON.stringify(questions));
       const downloadAnchorNode = document.createElement('a');
       downloadAnchorNode.setAttribute('href', data);
       downloadAnchorNode.setAttribute('download', fileName);
