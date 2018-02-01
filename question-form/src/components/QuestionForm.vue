@@ -79,7 +79,7 @@
           <label for="solution">FASIT:</label>
           <input v-model="question.solution"
           class="u-full-width"
-          type="text" placeholder="A" id="solution">
+          type="text" id="solution">
         </div>
       </div>
       <div class="row">
@@ -107,8 +107,9 @@
     </form>
     <div class="row">
       <ul>
-        <li v-bind:key="question.questionText" v-for="question in savedQuestions">
-          <span>{{question.questionText}}</span>
+        <li v-bind:key="question.id" v-for="question in savedQuestions">
+          <a v-on:click="editQuestion(question.id)">{{question.questionText}}</a>
+          <button v-on:click="deleteQuestion(question.id)" class="button">X</button>
         </li>
       </ul>
     </div>
@@ -116,6 +117,8 @@
 </template>
 
 <script>
+import uuid from 'uuid/v1';
+import QuestionsService from './questionsService';
 export default {
   name: 'QuestionForm',
   computed: {
@@ -126,20 +129,30 @@ export default {
   },
   methods: {
     addQuestion() {
-      let questions = [];
-      if (!JSON.parse(localStorage.getItem('naturfagSpørsmål'))) {
-        questions = [];
-      } else {
-        questions = JSON.parse(localStorage.getItem('naturfagSpørsmål'));
-      }
-      questions.push(JSON.stringify(this.question));
-      const stringified = JSON.stringify(questions);
-      localStorage.setItem('naturfagSpørsmål', stringified);
+      const questionsService = new QuestionsService();
+      questionsService.addQuestion(this.question);
+    },
+    editQuestion(id) {
+      const question = this.savedQuestions.find(e => e.id === id);
+      const index = this.savedQuestions.findIndex(e => e.id === id);
+      const questionsService = new QuestionsService();
+      questionsService.removeQuestion(this.question.id);
+      this.savedQuestions.splice(index, 1);
+      this.question = question;
+    },
+    deleteQuestion(id) {
+      debugger;
+      const questionsService = new QuestionsService();
+      questionsService.removeQuestion(this.question.id);
+      const index = this.savedQuestions.findIndex(e => e.id === id);
+      this.savedQuestions.splice(index, 1);
+      window.location.reload();
     },
     downloadFile() {
       const questions = JSON.parse(localStorage.getItem('naturfagSpørsmål'));
       const fileName = 'questions.json';
-      const data = 'data:text/json;charset=utf-8,@' + encodeURI(JSON.stringify(questions));
+      let data = 'data:text/json;charset=utf-8,@';
+      data += encodeURI(JSON.stringify(questions));
       const downloadAnchorNode = document.createElement('a');
       downloadAnchorNode.setAttribute('href', data);
       downloadAnchorNode.setAttribute('download', fileName);
@@ -151,6 +164,7 @@ export default {
   data() {
     return {
       question: {
+        id: uuid(),
         questionText: '',
         imageId: '8e846ed7-a6d7-443a-86aa-b1a4cd69b2c8',
         answers: [

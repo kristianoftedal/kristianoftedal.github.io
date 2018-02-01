@@ -10,9 +10,11 @@
     "e2e": "node test/e2e/runner.js",
     "test": "npm run e2e",
     "lint": "eslint --ext .js,.vue src test/e2e/specs",
-    "build": "node build/build.js"
+    "build": "node build/build.js",
+    "publish": "npm run build && rm -rf docs; cp -r dist docs && sed -i -e ‘s/src=\\//src=/g’ docs/index.html ; sed -i -e ‘s/href=\\//href=/g’ docs/index.html"
   },
   "dependencies": {
+    "uuid": "^3.2.1",
     "vue": "^2.5.2",
     "vuetify": "^0.17.6"
   },
