@@ -29,14 +29,7 @@
           <label for="bilde">Bilde?</label>
           <select class="u-full-width" id="bilde" v-model="question.imageId">
             <option value="">Nei</option>
-            <option value="Option 1">Bilde 1</option>
-            <option value="Option 2">Bilde 2</option>
-            <option value="Option 3">Bilde 3</option>
-            <option value="Option 3">Bilde 4</option>
-            <option value="Option 3">Bilde 5</option>
-            <option value="Option 3">Bilde 6</option>
-            <option value="Option 3">Bilde 7</option>
-            <option value="Option 3">Bilde 8</option>
+            <option v-bind:key="image.id" v-for="image in images" v-bind:value="image.id">{{ image.image }}</option>
           </select>
         </div>
       </div>
@@ -119,6 +112,8 @@
 <script>
 import uuid from 'uuid/v1';
 import QuestionsService from './questionsService';
+import images from './images';
+
 export default {
   name: 'QuestionForm',
   computed: {
@@ -163,6 +158,7 @@ export default {
   },
   data() {
     return {
+      images: images,
       question: {
         id: uuid(),
         questionText: '',
