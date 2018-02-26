@@ -135,7 +135,6 @@ export default {
       questionsService.addQuestion(this.question);
     },
     editQuestion(id) {
-      debugger;
       const question = this.savedQuestions.find(e => e.id === id);
       const index = this.savedQuestions.findIndex(e => e.id === id);
       const questionsService = new QuestionsService();

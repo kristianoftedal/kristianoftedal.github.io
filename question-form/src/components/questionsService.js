@@ -1,6 +1,5 @@
 export default class QuestionsService {
   addQuestion(question) {
-    debugger;
     this.questions = [];
     if (!JSON.parse(localStorage.getItem('naturfagSpørsmål'))) {
       this.questions = [];
