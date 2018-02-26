@@ -70,9 +70,13 @@
       <div class="row">
         <div class="six columns">
           <label for="solution">FASIT:</label>
-          <input v-model="question.solution"
-          class="u-full-width"
-          type="text" id="solution">
+
+          <select class="u-full-width" id="category" v-model="question.solution">
+            <option value="a">A</option>
+            <option value="b">B</option>
+            <option value="c">C</option>
+            <option value="d">D</option>
+          </select>
         </div>
       </div>
       <div class="row">
