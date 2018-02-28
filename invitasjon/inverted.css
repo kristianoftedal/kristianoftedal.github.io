@@ -16,8 +16,9 @@ body {
 }
 
 .invite-header {
-    margin-top: 100px;
+    margin-top: 125px;
     letter-spacing: 9px;
+    margin-left: 86px;
 }
 
 .invite-container {

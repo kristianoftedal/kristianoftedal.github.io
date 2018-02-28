@@ -173,6 +173,26 @@ const images =
       image: '9A',
     },
     {
+      id: 'b650838f-ef5a-aac4-b6b5-3e5edbbb7abe',
+      image: '9B',
+    },
+    {
+      id: 'aad6732d-944e-12a7-21a5-b7f0673b2171',
+      image: '9C',
+    },
+    {
+      id: '9d4c7f54-6e2b-00b6-c112-e272f8ad99ce',
+      image: '9D',
+    },
+    {
+      id: 'ee333f8d-cfba-e69c-eb7e-897e98a5b79d',
+      image: '9E',
+    },
+    {
+      id: '31aa1951-537c-45ad-63b1-b19ddd85790a',
+      image: '9F',
+    },
+    {
       id: '1f579906-455f-27da-0385-d34677e4abf6',
       image: '10A',
     },
