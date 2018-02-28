@@ -14,8 +14,10 @@
     "publish": "npm run build && rm -rf docs; cp -r dist docs && sed -i -e ‘s/src=\\//src=/g’ docs/index.html ; sed -i -e ‘s/href=\\//href=/g’ docs/index.html"
   },
   "dependencies": {
+    "firebase": "^4.10.1",
     "uuid": "^3.2.1",
     "vue": "^2.5.2",
+    "vuefire": "^1.4.5",
     "vuetify": "^0.17.6"
   },
   "devDependencies": {
