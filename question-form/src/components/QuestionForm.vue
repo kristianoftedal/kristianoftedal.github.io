@@ -118,8 +118,8 @@
 
 <script>
 import uuid from 'uuid/v1';
-import images from './images';
 import firebase from 'firebase';
+import images from './images';
 
 const config = {
   apiKey: 'AIzaSyBCSbMVM4PbAKKDDqAs5Sx0reEgqLh8Q9Y',
