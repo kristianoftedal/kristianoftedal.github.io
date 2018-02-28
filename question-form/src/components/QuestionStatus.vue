@@ -1,0 +1,98 @@
+<template>
+  <div class='container'>
+    <div class='row'>
+      <div class='twelve columns'>
+        <h3>Oversikt</h3>
+        <table class="u-full-width">
+          <thead>
+            <tr>
+              <th>Vanskelighetsgrad</th>
+              <th>Antall spørsmål</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Lett</td>
+              <td>{{easyCount}}</td>
+            </tr>
+            <tr>
+              <td>Middels</td>
+              <td>{{mediumCount}}</td>
+            </tr>
+            <tr>
+              <td>Vanskelig</td>
+              <td>{{hardCount}}</td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="u-full-width">
+          <thead>
+            <tr>
+              <th>Tema</th>
+              <th>Antall spørsmål</th>
+              <th>Antall lette</th>
+              <th>Antall middels</th>
+              <th>Antall vanskelige</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="categoryCount in categoryCounts" v-bind:key="categoryCount.name">
+              <td>{{categoryCount.name}}</td>
+              <td>{{categoryCount.count}}</td>
+              <td>{{categoryCount.easyCount}}</td>
+              <td>{{categoryCount.mediumCount}}</td>
+              <td>{{categoryCount.hardCount}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+import db from '../firebase';
+import categories from './categories';
+
+const naturfagQuestionsRef = db.ref('naturfagQuestions');
+export default {
+  name: 'QuestionStatus',
+  firebase: {
+    questions: naturfagQuestionsRef,
+  },
+  data() {
+    return {
+      question: {},
+    }
+  },
+  computed: {
+    easyCount: function () {
+      return this.questions.filter(q => q.difficulty === 'Lett').length;
+    },
+    mediumCount: function () {
+      return this.questions.filter(q => q.difficulty === 'Middels').length;
+    },
+    hardCount: function () {
+      return this.questions.filter(q => q.difficulty === 'Vanskelig').length;
+    },
+    categoryCounts: function () {
+      const categoriesCount = [];
+      for (let i = 0; i < categories.length; i++) {
+        const count = this.questions.filter(q => q.category === categories[i]).length;
+        const easyCount = this.questions.filter(q => q.category === categories[i]
+          && q.difficulty === 'Lett').length;
+        const mediumCount = this.questions.filter(q => q.category === categories[i]
+        && q.difficulty === 'Middels').length;
+        const hardCount = this.questions.filter(q => q.category === categories[i]
+        && q.difficulty === 'Vanskelig').length;
+        categoriesCount.push({ name: categories[i], count, easyCount, mediumCount, hardCount });
+      }
+      return categoriesCount;
+    },
+  }
+};
+</script>
+
+<!-- Add 'scoped' attribute to limit CSS to this component only -->
+<style scoped>
+</style>

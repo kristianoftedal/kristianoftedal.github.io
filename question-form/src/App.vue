@@ -1,11 +1,19 @@
 <template>
   <div id="app">
-    <QuestionForm/>
+    <div class="container">
+      <div class="row">
+        <router-link to="/">Oversikt</router-link>
+        <router-link to="/form">Nye spørsmål</router-link>
+        <router-link to="/readlist">Leselisten</router-link>
+        <router-view></router-view>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 import QuestionForm from './components/QuestionForm';
+import QuestionStatus from './components/QuestionStatus';
 
 export default {
   name: 'App',
