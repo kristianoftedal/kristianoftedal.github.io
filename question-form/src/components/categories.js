@@ -1,7 +1,6 @@
 const categories = [
   'Ernæring og helse',
   'Økologi og bærekraftig utvikling',
-  'Bærekraftig utvikling',
   'Elektromagnetisk stråling',
   'Radioaktiv stråling',
   'Redoksreaksjoner',

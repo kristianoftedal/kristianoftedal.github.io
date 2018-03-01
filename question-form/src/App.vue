@@ -12,14 +12,9 @@
 </template>
 
 <script>
-import QuestionForm from './components/QuestionForm';
-import QuestionStatus from './components/QuestionStatus';
 
 export default {
   name: 'App',
-  components: {
-    QuestionForm,
-  },
 };
 </script>
 

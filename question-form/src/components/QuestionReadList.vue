@@ -2,7 +2,33 @@
   <div class="row">
     <div class="twelve columns">
       <h2>Leselisten over spørsmål</h2>
-      <div v-bind:key="question['.key']" v-for="question in questions">
+      <div class="row">
+        <div class="twelve columns">
+          <button
+            class="button-primary"
+            v-on:click="clickFilter(category)"
+            v-for="category in categories"
+            v-bind:key="category">{{category}}
+          </button>
+          <button v-on:click="clickFilter(null)">
+            ingen kategori, takk
+          </button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="eleven columns">
+          <input class="u-full-width"
+            placeholder="søk i spørsmålstekst"
+            type="text"
+            v-model="search"
+          />
+        </div>
+        <div class="one columns">
+          <button class="button" v-on:click="resetSearch()">X</button>
+        </div>
+      </div>
+
+      <div v-bind:key="question['.key']" v-for="question in filteredQuestions">
         <div class="row">
           <div class="twelve columns">
             <h5>{{question.questionText}}</h5>
@@ -82,12 +108,10 @@
 </template>
 
 <script>
-import uuid from 'uuid/v1';
 import images from './images';
 import db from '../firebase';
 import categories from './categories';
 
-console.log(images);
 const naturfagQuestionsRef = db.ref('naturfagQuestions');
 
 export default {
@@ -95,8 +119,31 @@ export default {
   firebase: {
     questions: naturfagQuestionsRef,
   },
+  computed: {
+    filteredQuestions() {
+      let list = this.questions;
+      if (this.categoryFilter) {
+        list = list.filter(q => q.category === this.categoryFilter);
+      }
+      if (this.search !== '') {
+        list = list.filter(q => q.questionText.indexOf(this.search) > -1);
+      }
+      return list;
+    },
+  },
+  methods: {
+    clickFilter(filter) {
+      this.categoryFilter = filter;
+    },
+    resetSearch() {
+      this.search = '';
+    },
+  },
   data() {
     return {
+      categories,
+      categoryFilter: null,
+      search: '',
       images,
       questions: {},
     };

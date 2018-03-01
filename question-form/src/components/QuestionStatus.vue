@@ -63,19 +63,19 @@ export default {
   data() {
     return {
       question: {},
-    }
+    };
   },
   computed: {
-    easyCount: function () {
+    easyCount() {
       return this.questions.filter(q => q.difficulty === 'Lett').length;
     },
-    mediumCount: function () {
+    mediumCount() {
       return this.questions.filter(q => q.difficulty === 'Middels').length;
     },
-    hardCount: function () {
+    hardCount() {
       return this.questions.filter(q => q.difficulty === 'Vanskelig').length;
     },
-    categoryCounts: function () {
+    categoryCounts() {
       const categoriesCount = [];
       for (let i = 0; i < categories.length; i++) {
         const count = this.questions.filter(q => q.category === categories[i]).length;
@@ -89,7 +89,7 @@ export default {
       }
       return categoriesCount;
     },
-  }
+  },
 };
 </script>
 
