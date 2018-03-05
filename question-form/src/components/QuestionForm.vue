@@ -13,7 +13,12 @@
           <div class="twelve columns">
             <label for="category">Kategori</label>
             <select class="u-full-width" id="category" v-model="question.category">
-              <option v-bind:key="category" v-for="category in categories" value="category">{{category}}</option>
+              <option v-bind:key="category"
+                v-for="category in categories"
+                v-bind:value="category"
+              >
+                {{category}}
+              </option>
             </select>
           </div>
         </div>
@@ -22,7 +27,13 @@
             <label for="bilde">Bilde?</label>
             <select class="u-full-width" id="bilde" v-model="question.imageId">
               <option value="">Nei</option>
-              <option v-bind:key="image.id" v-for="image in images" v-bind:value="image.id">{{ image.image }}</option>
+              <option
+                v-bind:key="image.id"
+                v-for="image in images"
+                v-bind:value="image.id"
+              >
+                {{ image.image }}
+              </option>
             </select>
           </div>
         </div>
@@ -176,9 +187,35 @@ export default {
   },
   data() {
     return {
-      images: images,
+      images,
       categories,
-      question: this.blankQuestion(),
+      question: {
+        id: uuid(),
+        questionText: '',
+        imageId: '',
+        answers: [
+          {
+            key: 'a',
+            value: '',
+          },
+          {
+            key: 'b',
+            value: '',
+          },
+          {
+            key: 'c',
+            value: '',
+          },
+          {
+            key: 'd',
+            value: '',
+          },
+        ],
+        difficulty: 'Lett',
+        solution: '',
+        lang: 'no',
+        category: '',
+      },
     };
   },
 };
