@@ -108,7 +108,7 @@
     </div>
     <div class="four columns">
       <ul>
-        <li v-bind:key="question['.key']" v-for="question in questions">
+        <li v-bind:key="question['.key']" v-for="question in questionsList">
           <a v-on:click="editQuestion(question)">{{question.questionText}}</a>
           <button v-on:click="deleteQuestion(question)">X</button>
         </li>
@@ -129,6 +129,11 @@ export default {
   name: 'QuestionForm',
   firebase: {
     questions: db.ref('naturfagQuestions'),
+  },
+  computed: {
+    questionsList() {
+      return this.questions.reverse();
+    },
   },
   methods: {
     addQuestion() {
