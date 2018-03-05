@@ -51,7 +51,7 @@
             <span>{{question.imageId ?
               images.filter(i => i.id === question.imageId)[0] : 'Nei'}}
             </span>
-            <img v-if="question.imageId" :src="getImageSrc(question.imageId)"/>
+            <img v-if="question.imageId" class="questionImage" v-bind:src="getImageSrc(question.imageId)"/>
           </div>
         </div>
         <div class="row">
@@ -134,7 +134,7 @@ export default {
   },
   methods: {
     getImageSrc(id) {
-      const image = this.images.find(e => e.imageId === id);
+      const image = this.images.find(e => e.id === id);
       if (image) {
         return image.src;
       }
@@ -161,4 +161,7 @@ export default {
 
 <!-- Add 'scoped' attribute to limit CSS to this component only -->
 <style scoped>
+.questionImage {
+  width: 80%;
+}
 </style>

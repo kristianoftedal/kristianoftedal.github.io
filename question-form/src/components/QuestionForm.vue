@@ -5,7 +5,7 @@
       <form v-on:submit="addQuestion">
         <div class="row">
             <div class="twelve columns">
-              <label for="qtxt">Spørsmål:</label>
+              <label for="qtxt">Spørsmål: </label><span>Formel-eksempler: *NO_3|*, *Cr_2|O_7|^2-|*,  *SO_4|^2-|*</span>
               <input v-model="question.questionText" class="u-full-width" type="text" id="qtxt">
             </div>
         </div>
@@ -132,7 +132,7 @@ export default {
   },
   computed: {
     questionsList() {
-      return this.questions.reverse();
+      return this.questions.slice().reverse();
     },
   },
   methods: {
