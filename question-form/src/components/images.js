@@ -1,11 +1,9 @@
-
+import threeA from '../assets/3A.jpg';
 import threeB from '../assets/3B.jpg';
 import nineA from '../assets/9A.jpg';
 import nineB from '../assets/9B.jpg';
 import nineC from '../assets/9C.jpg';
 import nineD from '../assets/9D.jpg';
-
-const threeA = require('../assets/3A.jpg');
 
 const images =
   [
@@ -118,6 +116,54 @@ const images =
     {
       id: '1a74ab6b-eab8-9e2f-e633-84cf0e61d299',
       image: '5D',
+    },
+    {
+      id: '1287fdef7-b847-4ef3-bb51-a285d723fcdb',
+      image: '5E',
+    },
+    {
+      id: '642bb174-6732-497f-9cab-d486199cf064',
+      image: '5F',
+    },
+    {
+      id: 'ae30bdc3-2054-4784-bf1b-d1c91dda9c2b',
+      image: '5G',
+    },
+    {
+      id: '9c29a697-5407-4bc1-801f-d628c122c842',
+      image: '5H',
+    },
+    {
+      id: '76d13549-fd4c-47e8-ac58-360bdf49438a',
+      image: '5I',
+    },
+    {
+      id: '113cb1e92-ef25-4416-8e82-3af3f644bd2d',
+      image: '5J',
+    },
+    {
+      id: 'b28f12e5-b478-40ed-855f-33cf83dc24e6',
+      image: '5K',
+    },
+    {
+      id: 'ea68e1b9-8416-4e4e-867b-edf7c1b5a09c',
+      image: '5L',
+    },
+    {
+      id: '0f1fafe7-cbce-41de-a517-9dd3abfdba03',
+      image: '5M',
+    },
+    {
+      id: 'b5e359f5-4b93-4d52-94b7-e997d007bc37',
+      image: '5N',
+    },
+    {
+      id: 'b8f3f97e-9daf-4ed5-941e-4e8e83b9916b',
+      image: '5O',
+    },
+    {
+      id: '82dba5ad-c8fa-427a-9e26-78e3731970c5',
+      image: '5P',
     },
     {
       id: '830cbf73-6553-7c02-0888-e6a2bfbefbe3',
