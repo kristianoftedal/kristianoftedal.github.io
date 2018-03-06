@@ -1,5 +1,5 @@
 const categories = [
-  'Ernæring og helse',
+  'Ernæring, fordøyelse og helse',
   'Økologi og bærekraftig utvikling',
   'Elektromagnetisk stråling',
   'Radioaktiv stråling',
