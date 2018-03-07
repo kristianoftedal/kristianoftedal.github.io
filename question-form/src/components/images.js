@@ -130,6 +130,22 @@ const images =
       image: '5G',
     },
     {
+      id: '3403e2fa-b3d8-4312-a0a3-d837ae777692',
+      image: '5G1',
+    },
+    {
+      id: 'd1aeb2f9-c7af-4520-9ba6-6780d7d8d1ba',
+      image: '5G2',
+    },
+    {
+      id: '444a8dd2-fb9f-4818-b5e7-c23a32e2e365',
+      image: '5G3',
+    },
+    {
+      id: 'fb95c28f-1d9a-47c5-aed3-45d68a6dce41',
+      image: '5G4',
+    },
+    {
       id: '9c29a697-5407-4bc1-801f-d628c122c842',
       image: '5H',
     },

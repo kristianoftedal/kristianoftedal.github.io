@@ -6,7 +6,7 @@ const categories = [
   'Radioaktiv stråling',
   'Redoksreaksjoner',
   'Energi for fremtiden',
-  'DNA, proteinsyntesse og arv',
+  'DNA, proteinsyntese og arv',
   'Bioteknologi',
 ];
 
