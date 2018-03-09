@@ -99,7 +99,7 @@ const images =
     },
     {
       id: '7aa57515-ed58-30ef-e9fb-13bb415f1e68',
-      image: '4C',
+      image: '4E',
     },
     {
       id: '4bec8672-4b8e-83a6-cec0-b982d3fc66b2',
