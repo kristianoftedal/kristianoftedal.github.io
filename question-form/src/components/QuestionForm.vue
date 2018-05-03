@@ -103,7 +103,7 @@
           </div>
         </div>
         <input class="button-primary" type="submit" value="Submit">
-        <!-- <a v-on:click="downloadFile" class="button" type="button">Last ned</a> -->
+        <a v-on:click="downloadFile" class="button" type="button">Last ned</a>
       </form>
     </div>
     <div class="four columns">
@@ -177,18 +177,18 @@ export default {
     deleteQuestion(question) {
       naturfagQuestionsRef.child(question['.key']).remove();
     },
-    // downloadFile() {
-    //   const questions = JSON.parse(localStorage.getItem('naturfagSpørsmål'));
-    //   const fileName = 'questions.json';
-    //   let data = 'data:text/json;charset=utf-8,@';
-    //   data += encodeURI(JSON.stringify(questions));
-    //   const downloadAnchorNode = document.createElement('a');
-    //   downloadAnchorNode.setAttribute('href', data);
-    //   downloadAnchorNode.setAttribute('download', fileName);
-    //   document.body.appendChild(downloadAnchorNode);
-    //   downloadAnchorNode.click();
-    //   downloadAnchorNode.remove();
-    // },
+    downloadFile() {
+      const questions = this.questions;
+      const fileName = 'questions.json';
+      let data = 'data:text/json;charset=utf-8,@';
+      data += encodeURI(JSON.stringify(questions));
+      const downloadAnchorNode = document.createElement('a');
+      downloadAnchorNode.setAttribute('href', data);
+      downloadAnchorNode.setAttribute('download', fileName);
+      document.body.appendChild(downloadAnchorNode);
+      downloadAnchorNode.click();
+      downloadAnchorNode.remove();
+    },
   },
   data() {
     return {

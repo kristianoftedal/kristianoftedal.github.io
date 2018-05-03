@@ -2,6 +2,10 @@
   <div class='container'>
     <div class='row'>
       <div class='twelve columns'>
+        <img class="kjemiaImage" src="../assets/kjemiaLogo.png" />
+        <h1 class="kjemiaLogo">KJEMIA</h1>
+      </div>
+      <div class='twelve columns'>
         <h3>Oversikt</h3>
         <table class="u-full-width">
           <thead>
@@ -53,7 +57,7 @@
 <script>
 import db from '../firebase';
 import categories from './categories';
-
+import logo from '../assets/kjemiaLogo.png';
 const naturfagQuestionsRef = db.ref('naturfagQuestions');
 export default {
   name: 'QuestionStatus',
@@ -95,4 +99,10 @@ export default {
 
 <!-- Add 'scoped' attribute to limit CSS to this component only -->
 <style scoped>
+ .kjemiaLogo {
+  font-family: 'Lato', sans-serif !important;
+  }
+  .kjemiaImage {
+    width: 200px;
+  }
 </style>
