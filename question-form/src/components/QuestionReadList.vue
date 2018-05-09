@@ -31,6 +31,11 @@
       <div v-bind:key="question['.key']" v-for="question in filteredQuestions">
         <div class="row">
           <div class="twelve columns">
+            <h5>id: {{question.id}}</h5>
+          </div>
+        </div>
+        <div class="row">
+          <div class="twelve columns">
             <h5>{{question.questionText}}</h5>
           </div>
         </div>
