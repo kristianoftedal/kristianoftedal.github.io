@@ -2,10 +2,6 @@
   <div class='container'>
     <div class='row'>
       <div class='twelve columns'>
-        <img class="kjemiaImage" src="../assets/kjemiaLogo.png" />
-        <h1 class="kjemiaLogo">KJEMIA</h1>
-      </div>
-      <div class='twelve columns'>
         <h3>Oversikt</h3>
         <table class="u-full-width">
           <thead>
@@ -55,9 +51,9 @@
 </template>
 
 <script>
-import db from '../firebase';
+import db from '../../firebase';
 import categories from './categories';
-import logo from '../assets/kjemiaLogo.png';
+
 const naturfagQuestionsRef = db.ref('naturfagQuestions');
 export default {
   name: 'QuestionStatus',
@@ -81,7 +77,7 @@ export default {
     },
     categoryCounts() {
       const categoriesCount = [];
-      for (let i = 0; i < categories.length; i++) {
+      for (let i = 0; i < categories.length; i += 1) {
         const count = this.questions.filter(q => q.category === categories[i]).length;
         const easyCount = this.questions.filter(q => q.category === categories[i]
           && q.difficulty === 'Lett').length;

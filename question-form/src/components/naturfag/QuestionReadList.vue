@@ -115,7 +115,7 @@
 
 <script>
 import images from './images';
-import db from '../firebase';
+import db from '../../firebase';
 import categories from './categories';
 
 const naturfagQuestionsRef = db.ref('naturfagQuestions');

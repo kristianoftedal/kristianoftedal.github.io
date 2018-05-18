@@ -2,9 +2,12 @@
   <div id="app">
     <div class="container">
       <div class="row">
-        <router-link to="/">Oversikt</router-link>
-        <router-link to="/form">Nye spørsmål</router-link>
-        <router-link to="/readlist">Leselisten</router-link>
+        <router-link to="/naturfag/status">Oversikt Naturfag</router-link>
+        <router-link to="/naturfag/form">Nye spørsmål Naturfag</router-link>
+        <router-link to="/naturfag/readlist">Leselisten Naturfag</router-link>
+        <router-link to="/kjemi2/status">Oversikt Kjemi 2</router-link>
+        <router-link to="/kjemi2/form">Nye spørsmål Kjemi 2</router-link>
+        <router-link to="/kjemi2/readlist">Leselisten Kjemi 2</router-link>
         <router-view></router-view>
       </div>
     </div>

@@ -1,10 +1,3 @@
-import threeA from '../assets/3A.jpg';
-import threeB from '../assets/3B.jpg';
-import nineA from '../assets/9A.jpg';
-import nineB from '../assets/9B.jpg';
-import nineC from '../assets/9C.jpg';
-import nineD from '../assets/9D.jpg';
-
 const images =
   [
     {
@@ -54,12 +47,10 @@ const images =
     {
       id: '4f63e580-1f4c-b83f-002e-38164e4b73b7',
       image: '3A',
-      src: threeA,
     },
     {
       id: '206ee370-cdf5-9450-2a11-e412c81494e4',
       image: '3B',
-      src: threeB,
     },
     {
       id: '5b88e514-2745-c42d-3fc5-ebdad6faa6ca',
@@ -244,27 +235,22 @@ const images =
     {
       id: 'f4e6f6fa-9d1b-c61d-8994-d9a76b462957',
       image: '9A',
-      src: nineA,
     },
     {
       id: '1fc1ff3e-5d63-4eeb-8428-e9d0fd998cba',
       image: '9A1',
-      src: nineA,
     },
     {
       id: 'b650838f-ef5a-aac4-b6b5-3e5edbbb7abe',
       image: '9B',
-      src: nineB,
     },
     {
       id: 'aad6732d-944e-12a7-21a5-b7f0673b2171',
       image: '9C',
-      src: nineC,
     },
     {
       id: '9d4c7f54-6e2b-00b6-c112-e272f8ad99ce',
       image: '9D',
-      src: nineD,
     },
     {
       id: 'ee333f8d-cfba-e69c-eb7e-897e98a5b79d',

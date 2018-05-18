@@ -1,26 +1,44 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import QuestionForm from '../components/QuestionForm';
-import Questionstatus from '../components/QuestionStatus';
-import QuestionReadlist from '../components/QuestionReadList';
+import NaturfagQuestionForm from '../components/naturfag/QuestionForm';
+import NaturfagQuestionstatus from '../components/naturfag/QuestionStatus';
+import NaturQuestionReadlist from '../components/naturfag/QuestionReadList';
+import Kjemi2QuestionForm from '../components/kjemi2/QuestionForm';
+import Kjemi2Questionstatus from '../components/kjemi2/QuestionStatus';
+import Kjemi2QuestionReadlist from '../components/kjemi2/QuestionReadList';
 
 Vue.use(Router);
 export default new Router({
   routes: [
     {
-      path: '/form',
+      path: '/naturfag/form',
       name: 'QuestionsForm',
-      component: QuestionForm,
+      component: NaturfagQuestionForm,
     },
     {
-      path: '/readlist',
+      path: '/naturfag/readlist',
       name: 'QuestionReadlist',
-      component: QuestionReadlist,
+      component: NaturQuestionReadlist,
     },
     {
-      path: '/',
+      path: '/naturfag/status',
       name: 'QuestionsStatus',
-      component: Questionstatus,
+      component: NaturfagQuestionstatus,
+    },
+    {
+      path: '/kjemi2/form',
+      name: 'QuestionsForm',
+      component: Kjemi2QuestionForm,
+    },
+    {
+      path: '/kjemi2/readlist',
+      name: 'QuestionReadlist',
+      component: Kjemi2QuestionReadlist,
+    },
+    {
+      path: '/kjemi2/status',
+      name: 'QuestionsStatus',
+      component: Kjemi2Questionstatus,
     },
   ],
 });
