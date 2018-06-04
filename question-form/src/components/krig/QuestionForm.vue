@@ -5,7 +5,7 @@
       <form v-on:submit="addQuestion">
         <div class="row">
             <div class="twelve columns">
-              <label for="qtxt">Spørsmål: </label><span>Formel-eksempler: *NO_3|*, *Cr_2|O_7|^2-|*,  *SO_4|^2-|*</span>
+              <label for="qtxt">Spørsmål: </label>
               <input v-model="question.questionText" class="u-full-width" type="text" id="qtxt">
             </div>
         </div>
@@ -122,14 +122,13 @@ import uuid from 'uuid/v1';
 import images from './images';
 import db from '../../firebase';
 import categories from './categories';
-import freeQuestions from './freeQuestions';
 
-const naturfagQuestionsRef = db.ref('naturfagQuestions');
+const kjemi2QuestionsRef = db.ref('krig');
 
 export default {
   name: 'QuestionForm',
   firebase: {
-    questions: db.ref('naturfagQuestions'),
+    questions: db.ref('krig'),
   },
   computed: {
     questionsList() {
@@ -138,7 +137,7 @@ export default {
   },
   methods: {
     addQuestion() {
-      naturfagQuestionsRef.push(this.question);
+      kjemi2QuestionsRef.push(this.question);
       this.question = this.blankQuestion();
     },
     blankQuestion() {
@@ -176,13 +175,12 @@ export default {
       delete this.question['.key'];
     },
     deleteQuestion(question) {
-      naturfagQuestionsRef.child(question['.key']).remove();
+      kjemi2QuestionsRef.child(question['.key']).remove();
     },
     downloadFile() {
 
+      // const questions = this.questions;
       const questions = this.questions;
-      // const questions = this.questions.filter(e => freeQuestions.indexOf(e.id) >= 0);
-      debugger;
       const fileName = 'questions.json';
       let data = 'data:text/json;charset=utf-8,@';
       data += encodeURI(JSON.stringify(questions));
