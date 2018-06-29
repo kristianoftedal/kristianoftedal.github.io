@@ -41,6 +41,14 @@
         </div>
         <div class="row">
           <div class="two columns">
+            <span>Forklaring:</span>
+          </div>
+          <div class="ten columns">
+            <span>{{question.explanation}}</span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="two columns">
             <span>Kategori:</span>
           </div>
           <div class="ten columns">

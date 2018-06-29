@@ -10,6 +10,12 @@
             </div>
         </div>
         <div class="row">
+            <div class="twelve columns">
+              <label for="extxt">Forklaring: </label>
+              <textarea v-model="question.explanation" class="u-full-width" type="text" id="extxt"></textarea>
+            </div>
+        </div>
+        <div class="row">
           <div class="twelve columns">
             <label for="category">Kategori</label>
             <select class="u-full-width" id="category" v-model="question.category">
@@ -145,6 +151,7 @@ export default {
       return {
         id: uuid(),
         questionText: '',
+        explanation: '',
         imageId: '',
         answers: [
           {

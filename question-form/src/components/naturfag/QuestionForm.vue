@@ -10,6 +10,12 @@
             </div>
         </div>
         <div class="row">
+            <div class="twelve columns">
+              <label for="extxt">Forklaring: </label>
+              <textarea v-model="question.explanation" class="u-full-width" type="text" id="extxt"></textarea>
+            </div>
+        </div>
+        <div class="row">
           <div class="twelve columns">
             <label for="category">Kategori</label>
             <select class="u-full-width" id="category" v-model="question.category">
@@ -104,6 +110,7 @@
         </div>
         <input class="button-primary" type="submit" value="Submit">
         <a v-on:click="downloadFile" class="button" type="button">Last ned</a>
+        <a v-on:click="downloadFileFree" class="button" type="button">Last ned gratis</a>
       </form>
     </div>
     <div class="four columns">
@@ -145,6 +152,7 @@ export default {
       return {
         id: uuid(),
         questionText: '',
+        explanation: '',
         imageId: '',
         answers: [
           {
@@ -179,10 +187,19 @@ export default {
       naturfagQuestionsRef.child(question['.key']).remove();
     },
     downloadFile() {
-
       const questions = this.questions;
-      // const questions = this.questions.filter(e => freeQuestions.indexOf(e.id) >= 0);
-      debugger;
+      const fileName = 'questions.json';
+      let data = 'data:text/json;charset=utf-8,@';
+      data += encodeURI(JSON.stringify(questions));
+      const downloadAnchorNode = document.createElement('a');
+      downloadAnchorNode.setAttribute('href', data);
+      downloadAnchorNode.setAttribute('download', fileName);
+      document.body.appendChild(downloadAnchorNode);
+      downloadAnchorNode.click();
+      downloadAnchorNode.remove();
+    },
+    downloadFileFree() {
+      const questions = this.questions.filter(e => freeQuestions.indexOf(e.id) >= 0);
       const fileName = 'questions.json';
       let data = 'data:text/json;charset=utf-8,@';
       data += encodeURI(JSON.stringify(questions));

@@ -101,6 +101,14 @@
         </div>
         <div class="row">
           <div class="two columns">
+            <span>Forklaring:</span>
+          </div>
+          <div class="ten columns">
+            <span>{{question.explanation}}</span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="two columns">
             <span>Vanskelighetsgrad</span>
           </div>
           <div class="ten columns">
