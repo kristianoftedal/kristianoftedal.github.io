@@ -186,10 +186,8 @@ export default {
       tQuestionsRef.child(question['.key']).remove();
     },
     downloadFile() {
-
       // const questions = this.questions;
       const questions = this.questions.filter(e => freeQuestions.indexOf(e.id) >= 0);
-      debugger;
       const fileName = 'questions.json';
       let data = 'data:text/json;charset=utf-8,@';
       data += encodeURI(JSON.stringify(questions));
