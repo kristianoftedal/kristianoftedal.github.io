@@ -8,6 +8,18 @@
         <router-link to="/kjemi2/status">Oversikt Kjemi 2</router-link>
         <router-link to="/kjemi2/form">Nye spørsmål Kjemi 2</router-link>
         <router-link to="/kjemi2/readlist">Leselisten Kjemi 2</router-link>
+        <router-link to="/kjemi1/status">Oversikt Kjemi 1</router-link>
+        <router-link to="/kjemi1/form">Nye spørsmål Kjemi 1</router-link>
+        <router-link to="/kjemi1/readlist">Leselisten Kjemi 1</router-link>
+        <router-link to="/1t/status">Oversikt 1t</router-link>
+        <router-link to="/1t/form">Nye spørsmål 1t</router-link>
+        <router-link to="/1t/readlist">Leselisten 1t</router-link>
+        <router-link to="/s1/status">Oversikt s1</router-link>
+        <router-link to="/s1/form">Nye spørsmål s1</router-link>
+        <router-link to="/s1/readlist">Leselisten s1</router-link>
+        <router-link to="/geo/status">Oversikt geo</router-link>
+        <router-link to="/geo/form">Nye spørsmål geo</router-link>
+        <router-link to="/geo/readlist">Leselisten geo</router-link>
         <router-view></router-view>
       </div>
     </div>
