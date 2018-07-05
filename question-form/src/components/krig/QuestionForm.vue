@@ -178,7 +178,6 @@ export default {
       kjemi2QuestionsRef.child(question['.key']).remove();
     },
     downloadFile() {
-
       // const questions = this.questions;
       const questions = this.questions;
       const fileName = 'questions.json';

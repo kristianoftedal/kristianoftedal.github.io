@@ -60,11 +60,6 @@ export default {
   firebase: {
     questions: tQuestionsRef,
   },
-  data() {
-    return {
-      question: {},
-    };
-  },
   computed: {
     easyCount() {
       return this.questions.filter(q => q.difficulty === 'Lett').length;

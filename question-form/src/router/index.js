@@ -66,7 +66,7 @@ export default new Router({
       component: OneTQuestionReadlist,
     },
     {
-      path: '/t1/status',
+      path: '/1t/status',
       name: 'QuestionsStatus',
       component: OneTQuestionstatus,
     },
