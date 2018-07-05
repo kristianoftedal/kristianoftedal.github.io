@@ -1,11 +1,11 @@
 const categories = [
   'Tall og bokstavregning',
-  'Logaritmer',
+  'Faktorisering',
   'Likninger og ulikheter',
-  'Funksjonstyper og linær regresjon',
+  'Geometri og trigonometri',
+  'Funksjonsdtype og linær regresjon',
   'Derivasjon',
-  'Funksjonsdrøfting og optimering',
+  'Funksjonsdrøfting',
   'Sannsynlighet',
-  'Linær optimering',
 ];
 export default categories;
