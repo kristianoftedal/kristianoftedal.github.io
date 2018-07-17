@@ -2,8 +2,8 @@ const categories = [
   'Atomet, periodesystemet og uorganisk navnsetting',
   'Kjemiske bindinger',
   'Støkiometri',
-  'Likevekter',
   'Termokjemi',
+  'Likevekter',
   'Syrer og baser',
   'Organisk kjemi',
 ];
