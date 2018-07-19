@@ -36,7 +36,8 @@
         </div>
         <div class="row">
           <div class="twelve columns">
-            <h5>{{question.questionText}}</h5>
+            <h5 v-if="question.questionText.indexOf('*') !== -1" v-html="textParser(question.questionText)"></h5>
+            <h5 v-if="question.questionText.indexOf('*') === -1" >{{question.questionText}}</h5>
           </div>
         </div>
         <div class="row">
@@ -72,7 +73,8 @@
             <span>A:</span>
           </div>
           <div class="ten columns">
-            <span>{{question.answers[0].value}}</span>
+            <span v-if="question.answers[0].value.indexOf('*') !== -1"  v-html="textParser(question.answers[0].value)"></span>
+            <span v-if="question.answers[0].value.indexOf('*') === -1">{{question.answers[0].value}}</span>
           </div>
         </div>
         <div class="row">
@@ -80,7 +82,8 @@
             <span>B:</span>
           </div>
           <div class="ten columns">
-            <span>{{question.answers[1].value}}</span>
+            <span v-if="question.answers[1].value.indexOf('*') !== -1"  v-html="textParser(question.answers[1].value)"></span>
+            <span v-if="question.answers[1].value.indexOf('*') === -1" >{{question.answers[1].value}}</span>
           </div>
         </div>
         <div class="row">
@@ -88,7 +91,8 @@
             <span>C:</span>
           </div>
           <div class="ten columns">
-            <span>{{question.answers[2].value}}</span>
+            <span v-if="question.answers[2].value.indexOf('*') !== -1" v-html="textParser(question.answers[2].value)"></span>
+            <span v-if="question.answers[2].value.indexOf('*') === -1">{{question.answers[2].value}}</span>
           </div>
         </div>
         <div class="row">
@@ -96,7 +100,8 @@
           <span>D:</span>
           </div>
           <div class="ten columns">
-            <span>{{question.answers[3].value}}</span>
+            <span v-if="question.answers[3].value.indexOf('*') !== -1" v-html="textParser(question.answers[3].value)"></span>
+            <span v-if="question.answers[3].value.indexOf('*') === -1">{{question.answers[3].value}}</span>
           </div>
         </div>
         <div class="row">
@@ -122,6 +127,7 @@
 </template>
 
 <script>
+import formulaParser from '../../utils/formulaParser';
 import images from './images';
 import db from '../../firebase';
 import categories from './categories';
@@ -146,6 +152,10 @@ export default {
     },
   },
   methods: {
+
+    textParser(text) {
+      return formulaParser(text);
+    },
     getImageSrc(id) {
       const image = this.images.find(e => e.id === id);
       if (image) {
