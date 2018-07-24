@@ -2,8 +2,15 @@
   <div class="row">
     <div class="twelve columns">
       <h2>Hvordan legge inn formler:</h2>
-      <div>Vi har et enkelt kodespråk for enkle uttrykk som du ser i tabellen under, for mer avanserte ting anbefaler vi at du bruker unicode sine mattesymboler eller lager et bilde av uttrykket</div>
-      <div>Samling av unicode mattesymboler finner du <a target="_blank" href="https://www.compart.com/en/unicode/category/Sm">her</a>. Marker symbolet og copy-paste.</div>
+      <div>
+        Vi har et enkelt kodespråk for enkle uttrykk som du ser i tabellen under,
+        for mer avanserte ting anbefaler vi at du bruker unicode sine mattesymboler
+        eller lager et bilde av uttrykket
+      </div>
+      <div>Samling av unicode mattesymboler finner du
+        <a target="_blank" href="https://www.compart.com/en/unicode/category/Sm">her</a>
+        . Marker symbolet og copy-paste.
+      </div>
       <table class="u-full-width">
         <thead>
           <tr>
@@ -57,30 +64,26 @@
 </template>
 
 <script>
-import uuid from 'uuid/v1';
-import notie from 'notie';
-import db from '../firebase';
-import getCategories from '../utils/categoryHelper';
-import getImages from '../utils/imageHelper';
 import formulaParser from '../utils/formulaParser';
 import fractionParser from '../utils/fractionParser';
-import css from 'notie/dist/notie.min.css';
-// import freeQuestions from './freeQuestions';
 
 export default {
   name: 'Forumlas',
   methods: {
     textParser(text) {
       debugger;
-      if (!text)
-        return `<span></span>`;
+      if (!text) {
+        return '<span></span>';
+      }
       if (text.indexOf('*') > -1 && text.indexOf('#') > -1) {
         return fractionParser(text);
       }
-      if (text.indexOf('*') > -1 && !text.indexOf('#') > -1)
+      if (text.indexOf('*') > -1 && !text.indexOf('#') > -1) {
         return formulaParser(text);
-      if (text.indexOf('#') > -1)
+      }
+      if (text.indexOf('#') > -1) {
         return fractionParser(text);
+      }
       return `<span>${text}</span>`;
     },
   },

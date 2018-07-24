@@ -6,8 +6,11 @@
         <div class="row">
             <div class="twelve columns">
               <label for="qtxt">Spørsmål: </label>
-              <span>Formel-eksempler: *NO_3|*, *Cr_2|O_7|^2-|*,  *SO_4|^2-|*, #(x-2)/(x-3)#, #*x^2|*/*x_2|*#
-              <router-link target="_blank" to="/formulas">Mer om formler</router-link></span><br/>
+              <span>
+                Formel-eksempler: *NO_3|*, *Cr_2|O_7|^2-|*,
+                *SO_4|^2-|*, #(x-2)/(x-3)#, #*x^2|*/*x_2|*#alert
+              <router-link target="_blank" to="/formulas">Mer om formler</router-link>
+              </span><br/>
               <input v-model="question.questionText" class="u-full-width" type="text" id="qtxt">
               <span class="u-full-width" v-html="textParser(question.questionText)"></span>
             </div>
@@ -15,7 +18,9 @@
         <div class="row">
             <div class="twelve columns">
               <label for="extxt">Forklaring: </label>
-              <textarea v-model="question.explanation" class="u-full-width" type="text" id="extxt"></textarea>
+              <textarea
+                v-model="question.explanation"
+                  class="u-full-width" type="text" id="extxt"></textarea>
             </div>
             <div class="twelve columns">
               <span class="u-full-width" v-html="textParser(question.explanation)"></span>
@@ -156,12 +161,12 @@
 <script>
 import uuid from 'uuid/v1';
 import notie from 'notie';
+import css from 'notie/dist/notie.min.css'; // eslint-disable-line
 import db from '../firebase';
 import getCategories from '../utils/categoryHelper';
 import getImages from '../utils/imageHelper';
 import formulaParser from '../utils/formulaParser';
 import fractionParser from '../utils/fractionParser';
-import css from 'notie/dist/notie.min.css';
 // import freeQuestions from './freeQuestions';
 
 export default {
@@ -186,26 +191,29 @@ export default {
   methods: {
     addQuestion() {
       if (this.question['.key']) {
-        const key = question['.key'];
-        delete question['.key'];
+        const key = this.question['.key'];
+        delete this.question['.key'];
         db.ref(this.dbRef).child(key).update(this.question);
-        notie.alert({type: 1, text: 'Spørsmål endret 😀'});
+        notie.alert({ type: 1, text: 'Spørsmål endret 😀' });
       } else {
         db.ref(this.dbRef).push(this.question);
         this.question = this.blankQuestion();
-        notie.alert({type: 1, text: 'Spørsmål opprettet 😀'});
+        notie.alert({ type: 1, text: 'Spørsmål opprettet 😀' });
       }
     },
     textParser(text) {
-      if (!text)
-        return `<span></span>`;
+      if (!text) {
+        return '<span></span>';
+      }
       if (text.indexOf('*') > -1 && text.indexOf('#') > -1) {
         return fractionParser(text);
       }
-      if (text.indexOf('*') > -1 && !text.indexOf('#') > -1)
+      if (text.indexOf('*') > -1 && !text.indexOf('#') > -1) {
         return formulaParser(text);
-      if (text.indexOf('#') > -1)
+      }
+      if (text.indexOf('#') > -1) {
         return fractionParser(text);
+      }
       return `<span>${text}</span>`;
     },
     blankQuestion() {
@@ -243,7 +251,7 @@ export default {
     },
     deleteQuestion(question) {
       db.ref(this.dbRef).child(question['.key']).remove();
-        notie.alert({type: 1, text: 'Spørsmål slettet 😀'});
+      notie.alert({ type: 1, text: 'Spørsmål slettet 😀' });
     },
     downloadFile() {
       // const questions = this.questions;

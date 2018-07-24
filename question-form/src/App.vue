@@ -2,27 +2,56 @@
   <div id="app">
     <div class="container">
       <div class="row">
-        <router-link v-if="shouldShowRoute('naturfag')" to="/status/naturfagQuestions">Oversikt Naturfag</router-link>
-        <router-link v-if="shouldShowRoute('naturfag')" to="/form/naturfagQuestions">Nye spørsmål Naturfag</router-link>
-        <router-link v-if="shouldShowRoute('naturfag')" to="/readlist/naturfagQuestions">Leselisten Naturfag</router-link>
-        <router-link v-if="shouldShowRoute('kjemi2')" to="/status/kjemi2Questions">Oversikt Kjemi 2</router-link>
-        <router-link v-if="shouldShowRoute('kjemi2')" to="/form/kjemi2Questions">Nye spørsmål Kjemi 2</router-link>
-        <router-link v-if="shouldShowRoute('kjemi2')" to="/readlist/kjemi2Questions">Leselisten Kjemi 2</router-link>
-        <router-link v-if="shouldShowRoute('kjemi1')" to="/status/kjemi1Questions">Oversikt Kjemi 1</router-link>
-        <router-link v-if="shouldShowRoute('kjemi1')" to="/form/kjemi1Questions">Nye spørsmål Kjemi 1</router-link>
-        <router-link v-if="shouldShowRoute('kjemi1')" to="/readlist/kjemi1Questions">Leselisten Kjemi 1</router-link>
-        <router-link v-if="shouldShowRoute('1t')" to="/status/1tQuestions">Oversikt 1t</router-link>
-        <router-link v-if="shouldShowRoute('1t')" to="/form/1tQuestions">Nye spørsmål 1t</router-link>
-        <router-link v-if="shouldShowRoute('1t')" to="/readlist/1tQuestions">Leselisten 1t</router-link>
-        <router-link v-if="shouldShowRoute('s1')" to="/status/s1Questions">Oversikt s1</router-link>
-        <router-link v-if="shouldShowRoute('s1')" to="/form/s1Questions">Nye spørsmål s1</router-link>
-        <router-link v-if="shouldShowRoute('s1')" to="/readlist/s1Questions">Leselisten s1</router-link>
-        <router-link v-if="shouldShowRoute('geo')" to="/status/geoQuestions">Oversikt geo</router-link>
-        <router-link v-if="shouldShowRoute('geo')" to="/form/geoQuestions">Nye spørsmål geo</router-link>
-        <router-link v-if="shouldShowRoute('geo')" to="/readlist/geoQuestions">Leselisten geo</router-link>
-        <router-link v-if="shouldShowRoute('fysikk1')" to="/status/fysikk1Questions">Oversikt Fysikk 1</router-link>
-        <router-link v-if="shouldShowRoute('fysikk1')" to="/form/fysikk1Questions">Nye spørsmål Fysikk 1</router-link>
-        <router-link v-if="shouldShowRoute('fysikk1')" to="/readlist/fysikk1Questions">Leselisten Fysikk 1</router-link>
+        <router-link
+          v-if="shouldShowRoute('naturfag')"
+          to="/status/naturfagQuestions"
+        >
+            Oversikt Naturfag
+        </router-link>
+        <router-link
+          v-if="shouldShowRoute('naturfag')"
+          to="/form/naturfagQuestions">
+            Nye spørsmål Naturfag</router-link>
+        <router-link
+          v-if="shouldShowRoute('naturfag')"
+          to="/readlist/naturfagQuestions">Leselisten Naturfag</router-link>
+        <router-link
+          v-if="shouldShowRoute('kjemi2')"
+          to="/status/kjemi2Questions">Oversikt Kjemi 2</router-link>
+        <router-link v-if="shouldShowRoute('kjemi2')"
+          to="/form/kjemi2Questions">Nye spørsmål Kjemi 2</router-link>
+        <router-link v-if="shouldShowRoute('kjemi2')"
+          to="/readlist/kjemi2Questions">Leselisten Kjemi 2</router-link>
+        <router-link v-if="shouldShowRoute('kjemi1')"
+          to="/status/kjemi1Questions">Oversikt Kjemi 1</router-link>
+        <router-link v-if="shouldShowRoute('kjemi1')"
+          to="/form/kjemi1Questions">Nye spørsmål Kjemi 1</router-link>
+        <router-link v-if="shouldShowRoute('kjemi1')"
+          to="/readlist/kjemi1Questions">Leselisten Kjemi 1</router-link>
+        <router-link v-if="shouldShowRoute('1t')"
+          to="/status/1tQuestions">Oversikt 1t</router-link>
+        <router-link v-if="shouldShowRoute('1t')"
+          to="/form/1tQuestions">Nye spørsmål 1t</router-link>
+        <router-link v-if="shouldShowRoute('1t')"
+          to="/readlist/1tQuestions">Leselisten 1t</router-link>
+        <router-link v-if="shouldShowRoute('s1')"
+          to="/status/s1Questions">Oversikt s1</router-link>
+        <router-link v-if="shouldShowRoute('s1')"
+          to="/form/s1Questions">Nye spørsmål s1</router-link>
+        <router-link v-if="shouldShowRoute('s1')"
+          to="/readlist/s1Questions">Leselisten s1</router-link>
+        <router-link v-if="shouldShowRoute('geo')"
+          to="/status/geoQuestions">Oversikt geo</router-link>
+        <router-link v-if="shouldShowRoute('geo')"
+          to="/form/geoQuestions">Nye spørsmål geo</router-link>
+        <router-link v-if="shouldShowRoute('geo')"
+          to="/readlist/geoQuestions">Leselisten geo</router-link>
+        <router-link v-if="shouldShowRoute('fysikk1')"
+          to="/status/fysikk1Questions">Oversikt Fysikk 1</router-link>
+        <router-link v-if="shouldShowRoute('fysikk1')"
+          to="/form/fysikk1Questions">Nye spørsmål Fysikk 1</router-link>
+        <router-link v-if="shouldShowRoute('fysikk1')"
+          to="/readlist/fysikk1Questions">Leselisten Fysikk 1</router-link>
         <router-view></router-view>
       </div>
     </div>
@@ -38,9 +67,9 @@ export default {
       if (window.location.hash.indexOf(param) > -1) {
         return true;
       }
-      return false
-    }
-  }
+      return false;
+    },
+  },
 };
 </script>
 

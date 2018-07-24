@@ -53,7 +53,6 @@
 <script>
 import db from '../firebase';
 import getCategories from '../utils/categoryHelper';
-import Router from 'vue-router';
 
 export default {
   name: 'QuestionStatus',

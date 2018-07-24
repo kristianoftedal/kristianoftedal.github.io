@@ -37,14 +37,17 @@
             <span>id: {{question.id}}</span>
           </div>
           <div class="one columns">
-            <button class="button" v-if="!isEdit" v-on:click="editQuestion()">✎ Rediger</button>
-            <button class="button-primary" v-if="isEdit" v-on:click="updateQuestion(question)">Lagre</button>
+            <button class="button" v-if="!question.editable" v-on:click="editQuestion(question)">✎ Rediger</button>
+            <button
+              class="button-primary"
+              v-if="question.editable"
+              v-on:click="updateQuestion(question)">Lagre</button>
           </div>
         </div>
         <div class="row">
           <div class="twelve columns">
-            <h5 v-html="textParser(question.questionText)"></h5>
-            <input v-if="isEdit" v-model="question.questionText" class="u-full-width" type="text" id="qtxt">
+            <h5 v-html="textParser(question.questionText)"> {{isEdit[question.id]}}</h5>
+            <input v-if="question.editable" v-model="question.questionText" class="u-full-width" type="text" id="qtxt">
           </div>
         </div>
         <div class="row">
@@ -53,7 +56,7 @@
           </div>
           <div class="ten columns">
             <span v-html="textParser(question.explanation)"></span>
-            <textarea v-if="isEdit" v-model="question.explanation" class="u-full-width" type="text" id="extxt"></textarea>
+            <textarea v-if="question.editable" v-model="question.explanation" class="u-full-width" type="text" id="extxt"></textarea>
           </div>
         </div>
         <div class="row">
@@ -61,8 +64,8 @@
             <span>Kategori:</span>
           </div>
           <div class="ten columns">
-            <span v-if="!isEdit" >{{question.category}}</span>
-            <select v-if="isEdit" class="u-full-width" id="category" v-model="question.category">
+            <span v-if="!question.editable" >{{question.category}}</span>
+            <select v-if="question.editable" class="u-full-width" id="category" v-model="question.category">
               <option v-bind:key="category"
                 v-for="category in categories"
                 v-bind:value="category"
@@ -78,10 +81,10 @@
             </span>
           </div>
           <div class="ten columns">
-            <span v-if="!isEdit">{{question.imageId ?
+            <span v-if="!isEdit.includes(question.id)">{{question.imageId ?
               images.filter(i => i.id === question.imageId)[0] : 'Nei'}}
             </span>
-            <select v-if="isEdit" class="u-full-width" id="bilde" v-model="question.imageId">
+            <select v-if="question.editable" class="u-full-width" id="bilde" v-model="question.imageId">
               <option value="">Nei</option>
               <option
                 v-bind:key="image.id"
@@ -99,9 +102,9 @@
             <span>A:</span>
           </div>
           <div class="ten columns">
-            <span v-if="!isEdit"  v-html="textParser(question.answers[0].value)"></span>
+            <span v-if="!question.editable"  v-html="textParser(question.answers[0].value)"></span>
             <input
-              v-if="isEdit"
+              v-if="question.editable"
               class="u-full-width"
               type="text"
               v-model="question.answers[0].value"
@@ -113,9 +116,9 @@
             <span>B:</span>
           </div>
           <div class="ten columns">
-            <span v-if="!isEdit" v-html="textParser(question.answers[1].value)"></span>
+            <span v-if="!question.editable" v-html="textParser(question.answers[1].value)"></span>
             <input
-              v-if="isEdit"
+              v-if="question.editable"
               class="u-full-width"
               type="text"
               v-model="question.answers[1].value"
@@ -127,9 +130,9 @@
             <span>C:</span>
           </div>
           <div class="ten columns">
-            <span v-if="!isEdit" v-html="textParser(question.answers[2].value)"></span>
+            <span v-if="!question.editable" v-html="textParser(question.answers[2].value)"></span>
             <input
-              v-if="isEdit"
+              v-if="question.editable"
               class="u-full-width"
               type="text"
               v-model="question.answers[2].value"
@@ -141,9 +144,9 @@
           <span>D:</span>
           </div>
           <div class="ten columns">
-            <span v-if="!isEdit" v-html="textParser(question.answers[3].value)"></span>
+            <span v-if="!question.editable" v-html="textParser(question.answers[3].value)"></span>
             <input
-              v-if="isEdit"
+              v-if="question.editable"
               class="u-full-width"
               type="text"
               v-model="question.answers[3].value"
@@ -155,8 +158,8 @@
             <span>Fasit:</span>
           </div>
           <div class="ten columns">
-            <span v-if="!isEdit">{{question.solution}}</span>
-            <select v-if="isEdit" class="u-full-width" id="category" v-model="question.solution">
+            <span v-if="!question.editable">{{question.solution}}</span>
+            <select v-if="question.editable" class="u-full-width" id="category" v-model="question.solution">
               <option value="a">A</option>
               <option value="b">B</option>
               <option value="c">C</option>
@@ -169,8 +172,8 @@
             <span>Vanskelighetsgrad</span>
           </div>
           <div class="ten columns">
-            <span v-if="!isEdit" >{{question.difficulty}}</span>
-            <select v-if="isEdit" class="u-full-width"
+            <span v-if="!question.editable" >{{question.difficulty}}</span>
+            <select v-if="question.editable" class="u-full-width"
               id="solution" v-model="question.difficulty">
               <option value="Lett">Lett</option>
               <option value="Middels">Middels</option>
@@ -185,14 +188,13 @@
 </template>
 
 <script>
+import notie from 'notie';
+import css from 'notie/dist/notie.min.css';
 import formulaParser from '../utils/formulaParser';
 import fractionParser from '../utils/fractionParser';
 import getImages from '../utils/imageHelper';
 import db from '../firebase';
 import getCategories from '../utils/categoryHelper';
-import notie from 'notie';
-import css from 'notie/dist/notie.min.css';
-import categories from './s1/categories';
 
 export default {
   name: 'QuestionReadList',
@@ -215,7 +217,7 @@ export default {
         list = list.filter(q => q.category === this.categoryFilter);
       }
       if (this.categoryFilter === 'lost') {
-        list = list.filter(q => !q.category || q.category === '' || !this.categories.includes(q.category));
+        list = list.filter(q => !q.category || q.category === '' || !this.categories.includes(q.category));
       }
       if (this.search !== '') {
         list = list.filter(q => q.questionText.indexOf(this.search) > -1);
@@ -241,21 +243,21 @@ export default {
       // }
       return list;
     },
-    isEditable() {
-      return this.isEdit;
-    }
   },
   methods: {
     textParser(text) {
-      if (!text)
-        return `<span></span>`;
+      if (!text) {
+        return '<span></span>';
+      }
       if (text.indexOf('*') > -1 && text.indexOf('#') > -1) {
         return fractionParser(text);
       }
-      if (text.indexOf('*') > -1 && !text.indexOf('#') > -1)
+      if (text.indexOf('*') > -1 && !text.indexOf('#') > -1) {
         return formulaParser(text);
-      if (text.indexOf('#') > -1)
+      }
+      if (text.indexOf('#') > -1) {
         return fractionParser(text);
+      }
       return `<span>${text}</span>`;
     },
     getImageSrc(id) {
@@ -271,23 +273,25 @@ export default {
     resetSearch() {
       this.search = '';
     },
-    editQuestion() {
-      this.isEdit = !this.isEdit;
+    editQuestion(question) {
+      this.isEdit.push(question.id);
+      question.editable = !question.editable;
     },
     updateQuestion(question) {
+      question.editable = !question.editable;
       const key = question['.key'];
-      delete question['.key'];
+      delete question['.key']; // eslint-disable-line
       db.ref(this.dbRef).child(key).update(question);
-      this.isEdit = !this.isEdit;
-      notie.alert({type: 1, text: 'Endring lagret 😀'});
-    }
+      this.isEdit.splice(this.isEdit.indexOf(question.id), 1);
+      notie.alert({ type: 1, text: 'Endring lagret 😀' });
+    },
   },
   data() {
     return {
       categoryFilter: null,
       search: '',
       questions: {},
-      isEdit: false,
+      isEdit: [],
     };
   },
 };

@@ -4,7 +4,7 @@ const categories = [
   'Bølgefysikk',
   'Atom- og kjernefysikk',
   'Astrofysikk',
-  'Elektristet',
-  'Matrialer, halvledere og teknologi',
+  'Elektrisitet',
+  'Materialer, halvledere og teknologi',
 ];
 export default categories;
