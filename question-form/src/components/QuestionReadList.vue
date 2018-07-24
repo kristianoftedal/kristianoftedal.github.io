@@ -13,6 +13,9 @@
           <button v-on:click="clickFilter(null)">
             ingen kategori, takk
           </button>
+          <button v-on:click="clickFilter('lost')">
+            glemt/gammel kategori
+          </button>
         </div>
       </div>
       <div class="row">
@@ -189,6 +192,7 @@ import db from '../firebase';
 import getCategories from '../utils/categoryHelper';
 import notie from 'notie';
 import css from 'notie/dist/notie.min.css';
+import categories from './s1/categories';
 
 export default {
   name: 'QuestionReadList',
@@ -209,6 +213,10 @@ export default {
       let list = this.questions;
       if (this.categoryFilter) {
         list = list.filter(q => q.category === this.categoryFilter);
+      }
+      if (this.categoryFilter === 'lost') {
+        debugger;
+        list = list.filter(q => !this.categories.includes(q.category));
       }
       if (this.search !== '') {
         list = list.filter(q => q.questionText.indexOf(this.search) > -1);
