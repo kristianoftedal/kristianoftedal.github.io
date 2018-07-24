@@ -186,7 +186,9 @@ export default {
   methods: {
     addQuestion() {
       if (this.question['.key']) {
-        db.ref(this.dbRef).child(this.question['.key']).update(this.question);
+        const key = question['.key'];
+        delete question['.key'];
+        db.ref(this.dbRef).child(key).update(this.question);
         notie.alert({type: 1, text: 'Spørsmål endret 😀'});
       } else {
         db.ref(this.dbRef).push(this.question);

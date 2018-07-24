@@ -69,11 +69,6 @@ export default {
       firebaseRef: '',
     };
   },
-  watch: {
-    dbRef: function(newVal) {
-      this.firebaseRef = newVal;
-    },
-  },
   computed: {
     easyCount() {
       return this.questions.filter(q => q.difficulty === 'Lett').length;
