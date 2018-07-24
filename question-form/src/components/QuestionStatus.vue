@@ -51,19 +51,28 @@
 </template>
 
 <script>
-import db from '../../firebase';
-import categories from './categories';
+import db from '../firebase';
+import getCategories from '../utils/categoryHelper';
+import Router from 'vue-router';
 
-const geoQuestionsRef = db.ref('geoQuestions');
 export default {
   name: 'QuestionStatus',
-  firebase: {
-    questions: geoQuestionsRef,
+  props: ['dbRef'],
+  firebase() {
+    return {
+      questions: db.ref(this.dbRef),
+    };
   },
   data() {
     return {
       question: {},
+      firebaseRef: '',
     };
+  },
+  watch: {
+    dbRef: function(newVal) {
+      this.firebaseRef = newVal;
+    },
   },
   computed: {
     easyCount() {
@@ -77,6 +86,7 @@ export default {
     },
     categoryCounts() {
       const categoriesCount = [];
+      const categories = getCategories(this.dbRef);
       for (let i = 0; i < categories.length; i += 1) {
         const count = this.questions.filter(q => q.category === categories[i]).length;
         const easyCount = this.questions.filter(q => q.category === categories[i]

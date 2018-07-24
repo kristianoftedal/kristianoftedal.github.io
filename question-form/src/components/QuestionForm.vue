@@ -5,14 +5,20 @@
       <form v-on:submit="addQuestion">
         <div class="row">
             <div class="twelve columns">
-              <label for="qtxt">Spørsmål: </label><span>Formel-eksempler: *NO_3|*, *Cr_2|O_7|^2-|*,  *SO_4|^2-|*</span>
+              <label for="qtxt">Spørsmål: </label>
+              <span>Formel-eksempler: *NO_3|*, *Cr_2|O_7|^2-|*,  *SO_4|^2-|*, #(x-2)/(x-3)#, #*x^2|*/*x_2|*#
+              <router-link target="_blank" to="/formulas">Mer om formler</router-link></span><br/>
               <input v-model="question.questionText" class="u-full-width" type="text" id="qtxt">
+              <span class="u-full-width" v-html="textParser(question.questionText)"></span>
             </div>
         </div>
         <div class="row">
             <div class="twelve columns">
               <label for="extxt">Forklaring: </label>
               <textarea v-model="question.explanation" class="u-full-width" type="text" id="extxt"></textarea>
+            </div>
+            <div class="twelve columns">
+              <span class="u-full-width" v-html="textParser(question.explanation)"></span>
             </div>
         </div>
         <div class="row">
@@ -52,6 +58,12 @@
               v-model="question.answers[0].value"
               id="solution1">
           </div>
+          <div class="six columns">
+            <br/>
+            <span
+              class="u-full-width" v-html="textParser(question.answers[0].value)">
+            </span>
+          </div>
         </div>
         <div class="row">
           <div class="six columns">
@@ -59,6 +71,12 @@
             <input class="u-full-width"
               v-model="question.answers[1].value"
               type="text" id="solution2">
+          </div>
+          <div class="six columns">
+            <br/>
+            <span
+              class="u-full-width" v-html="textParser(question.answers[1].value)">
+            </span>
           </div>
         </div>
         <div class="row">
@@ -68,6 +86,12 @@
               v-model="question.answers[2].value"
               type="text" id="solution3">
           </div>
+          <div class="six columns">
+            <br/>
+            <span
+              class="u-full-width" v-html="textParser(question.answers[2].value)">
+            </span>
+          </div>
         </div>
         <div class="row">
           <div class="six columns">
@@ -75,6 +99,12 @@
             <input class="u-full-width"
               v-model="question.answers[3].value"
               type="text" placeholder="" id="solution4">
+          </div>
+          <div class="six columns">
+            <br/>
+            <span
+              class="u-full-width" v-html="textParser(question.answers[3].value)">
+            </span>
           </div>
         </div>
         <div class="row">
@@ -110,7 +140,6 @@
         </div>
         <input class="button-primary" type="submit" value="Submit">
         <a v-on:click="downloadFile" class="button" type="button">Last ned</a>
-        <a v-on:click="downloadFileFree" class="button" type="button">Last ned gratis</a>
       </form>
     </div>
     <div class="four columns">
@@ -126,27 +155,56 @@
 
 <script>
 import uuid from 'uuid/v1';
-import images from './images';
-import db from '../../firebase';
-import categories from './categories';
-import freeQuestions from './freeQuestions';
-
-const naturfagQuestionsRef = db.ref('naturfagQuestions');
+import notie from 'notie';
+import db from '../firebase';
+import getCategories from '../utils/categoryHelper';
+import getImages from '../utils/imageHelper';
+import formulaParser from '../utils/formulaParser';
+import fractionParser from '../utils/fractionParser';
+import css from 'notie/dist/notie.min.css';
+// import freeQuestions from './freeQuestions';
 
 export default {
   name: 'QuestionForm',
-  firebase: {
-    questions: db.ref('naturfagQuestions'),
+  props: ['dbRef'],
+  firebase() {
+    return {
+      questions: db.ref(this.dbRef),
+    };
   },
   computed: {
+    images() {
+      return getImages(this.dbRef);
+    },
+    categories() {
+      return getCategories(this.dbRef);
+    },
     questionsList() {
       return this.questions.slice().reverse();
     },
   },
   methods: {
     addQuestion() {
-      naturfagQuestionsRef.push(this.question);
-      this.question = this.blankQuestion();
+      if (this.question['.key']) {
+        db.ref(this.dbRef).child(this.question['.key']).update(this.question);
+        notie.alert({type: 1, text: 'Spørsmål endret 😀'});
+      } else {
+        db.ref(this.dbRef).push(this.question);
+        this.question = this.blankQuestion();
+        notie.alert({type: 1, text: 'Spørsmål opprettet 😀'});
+      }
+    },
+    textParser(text) {
+      if (!text)
+        return `<span></span>`;
+      if (text.indexOf('*') > -1 && text.indexOf('#') > -1) {
+        return fractionParser(text);
+      }
+      if (text.indexOf('*') > -1 && !text.indexOf('#') > -1)
+        return formulaParser(text);
+      if (text.indexOf('#') > -1)
+        return fractionParser(text);
+      return `<span>${text}</span>`;
     },
     blankQuestion() {
       return {
@@ -180,41 +238,27 @@ export default {
     },
     editQuestion(question) {
       this.question = question;
-      this.deleteQuestion(question);
-      delete this.question['.key'];
     },
     deleteQuestion(question) {
-      naturfagQuestionsRef.child(question['.key']).remove();
+      db.ref(this.dbRef).child(question['.key']).remove();
+        notie.alert({type: 1, text: 'Spørsmål slettet 😀'});
     },
     downloadFile() {
-      const questions = this.questions;
-      const fileName = 'questions.json';
-      let data = 'data:text/json;charset=utf-8,@';
-      data += encodeURI(JSON.stringify(questions));
-      const downloadAnchorNode = document.createElement('a');
-      downloadAnchorNode.setAttribute('href', data);
-      downloadAnchorNode.setAttribute('download', fileName);
-      document.body.appendChild(downloadAnchorNode);
-      downloadAnchorNode.click();
-      downloadAnchorNode.remove();
-    },
-    downloadFileFree() {
-      const questions = this.questions.filter(e => freeQuestions.indexOf(e.id) >= 0);
-      const fileName = 'questions.json';
-      let data = 'data:text/json;charset=utf-8,@';
-      data += encodeURI(JSON.stringify(questions));
-      const downloadAnchorNode = document.createElement('a');
-      downloadAnchorNode.setAttribute('href', data);
-      downloadAnchorNode.setAttribute('download', fileName);
-      document.body.appendChild(downloadAnchorNode);
-      downloadAnchorNode.click();
-      downloadAnchorNode.remove();
+      // const questions = this.questions;
+      // const questions = this.questions.filter(e => freeQuestions.indexOf(e.id) >= 0);
+      // const fileName = 'questions.json';
+      // let data = 'data:text/json;charset=utf-8,@';
+      // data += encodeURI(JSON.stringify(questions));
+      // const downloadAnchorNode = document.createElement('a');
+      // downloadAnchorNode.setAttribute('href', data);
+      // downloadAnchorNode.setAttribute('download', fileName);
+      // document.body.appendChild(downloadAnchorNode);
+      // downloadAnchorNode.click();
+      // downloadAnchorNode.remove();
     },
   },
   data() {
     return {
-      images,
-      categories,
       question: {
         id: uuid(),
         questionText: '',
@@ -249,5 +293,10 @@ export default {
 
 <!-- Add 'scoped' attribute to limit CSS to this component only -->
 <style scoped>
-
+a {
+    cursor: pointer;
+}
+ul {
+  list-style-type: none;
+}
 </style>

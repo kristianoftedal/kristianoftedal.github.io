@@ -3,7 +3,7 @@ const categories = [
   'Faktorisering',
   'Likninger og ulikheter',
   'Geometri og trigonometri',
-  'Funksjonsdtype og linær regresjon',
+  'Funksjoner og lineær regresjon',
   'Derivasjon',
   'Funksjonsdrøfting',
   'Sannsynlighet',

@@ -2,24 +2,27 @@
   <div id="app">
     <div class="container">
       <div class="row">
-        <router-link to="/naturfag/status">Oversikt Naturfag</router-link>
-        <router-link to="/naturfag/form">Nye spørsmål Naturfag</router-link>
-        <router-link to="/naturfag/readlist">Leselisten Naturfag</router-link>
-        <router-link to="/kjemi2/status">Oversikt Kjemi 2</router-link>
-        <router-link to="/kjemi2/form">Nye spørsmål Kjemi 2</router-link>
-        <router-link to="/kjemi2/readlist">Leselisten Kjemi 2</router-link>
-        <router-link to="/kjemi1/status">Oversikt Kjemi 1</router-link>
-        <router-link to="/kjemi1/form">Nye spørsmål Kjemi 1</router-link>
-        <router-link to="/kjemi1/readlist">Leselisten Kjemi 1</router-link>
-        <router-link to="/1t/status">Oversikt 1t</router-link>
-        <router-link to="/1t/form">Nye spørsmål 1t</router-link>
-        <router-link to="/1t/readlist">Leselisten 1t</router-link>
-        <router-link to="/s1/status">Oversikt s1</router-link>
-        <router-link to="/s1/form">Nye spørsmål s1</router-link>
-        <router-link to="/s1/readlist">Leselisten s1</router-link>
-        <router-link to="/geo/status">Oversikt geo</router-link>
-        <router-link to="/geo/form">Nye spørsmål geo</router-link>
-        <router-link to="/geo/readlist">Leselisten geo</router-link>
+        <router-link v-if="shouldShowRoute('naturfag')" to="/status/naturfagQuestions">Oversikt Naturfag</router-link>
+        <router-link v-if="shouldShowRoute('naturfag')" to="/form/naturfagQuestions">Nye spørsmål Naturfag</router-link>
+        <router-link v-if="shouldShowRoute('naturfag')" to="/readlist/naturfagQuestions">Leselisten Naturfag</router-link>
+        <router-link v-if="shouldShowRoute('kjemi2')" to="/status/kjemi2Questions">Oversikt Kjemi 2</router-link>
+        <router-link v-if="shouldShowRoute('kjemi2')" to="/form/kjemi2Questions">Nye spørsmål Kjemi 2</router-link>
+        <router-link v-if="shouldShowRoute('kjemi2')" to="/readlist/kjemi2Questions">Leselisten Kjemi 2</router-link>
+        <router-link v-if="shouldShowRoute('kjemi1')" to="/status/kjemi1Questions">Oversikt Kjemi 1</router-link>
+        <router-link v-if="shouldShowRoute('kjemi1')" to="/form/kjemi1Questions">Nye spørsmål Kjemi 1</router-link>
+        <router-link v-if="shouldShowRoute('kjemi1')" to="/readlist/kjemi1Questions">Leselisten Kjemi 1</router-link>
+        <router-link v-if="shouldShowRoute('1t')" to="/status/1tQuestions">Oversikt 1t</router-link>
+        <router-link v-if="shouldShowRoute('1t')" to="/form/1tQuestions">Nye spørsmål 1t</router-link>
+        <router-link v-if="shouldShowRoute('1t')" to="/readlist/1tQuestions">Leselisten 1t</router-link>
+        <router-link v-if="shouldShowRoute('s1')" to="/status/s1Questions">Oversikt s1</router-link>
+        <router-link v-if="shouldShowRoute('s1')" to="/form/s1Questions">Nye spørsmål s1</router-link>
+        <router-link v-if="shouldShowRoute('s1')" to="/readlist/s1Questions">Leselisten s1</router-link>
+        <router-link v-if="shouldShowRoute('geo')" to="/status/geoQuestions">Oversikt geo</router-link>
+        <router-link v-if="shouldShowRoute('geo')" to="/form/geoQuestions">Nye spørsmål geo</router-link>
+        <router-link v-if="shouldShowRoute('geo')" to="/readlist/geoQuestions">Leselisten geo</router-link>
+        <router-link v-if="shouldShowRoute('fysikk1')" to="/status/fysikk1Questions">Oversikt Fysikk 1</router-link>
+        <router-link v-if="shouldShowRoute('fysikk1')" to="/form/fysikk1Questions">Nye spørsmål Fysikk 1</router-link>
+        <router-link v-if="shouldShowRoute('fysikk1')" to="/readlist/fysikk1Questions">Leselisten Fysikk 1</router-link>
         <router-view></router-view>
       </div>
     </div>
@@ -30,6 +33,14 @@
 
 export default {
   name: 'App',
+  methods: {
+    shouldShowRoute(param) {
+      if (window.location.hash.indexOf(param) > -1) {
+        return true;
+      }
+      return false
+    }
+  }
 };
 </script>
 
@@ -500,7 +511,7 @@ th {
 .container {
   position: relative;
   width: 100%;
-  max-width: 960px;
+  max-width: 1960px;
   margin: 0 auto;
   padding: 0 20px;
   box-sizing: border-box; }
@@ -520,7 +531,7 @@ th {
 /* For devices larger than 550px */
 @media (min-width: 550px) {
   .container {
-    width: 80%; }
+    width: 90%; }
   .column,
   .columns {
     margin-left: 4%; }
@@ -885,5 +896,20 @@ there.
 
 /* Larger than Desktop HD */
 @media (min-width: 1200px) {}
+
+
+.fraction, .top, .bottom {
+    padding: 0 5px;
+}
+
+.fraction {
+    display: inline-block;
+    text-align: center;
+}
+
+.bottom{
+    border-top: 1px solid #000;
+    display: block;
+}
 
 </style>

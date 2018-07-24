@@ -1,7 +1,7 @@
 const categories = [
   'Buffere',
-  'Uorganisk Kjemi',
-  'Organisk Kjemi og polymerere',
+  'Uorganisk kjemi',
+  'Organisk kjemi og polymerere',
   'Redoksreaksjoner',
   'Elektrokjemi',
   'Næringsstoffer og biokjemi',

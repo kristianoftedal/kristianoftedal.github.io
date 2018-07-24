@@ -51,6 +51,12 @@ const questionParser = (question) => {
     }
   }
   parts = null;
+  for (let i = 0; i < restructuredText.length; i += 1) {
+    if (restructuredText[i] === '<span></span>') {
+      restructuredText.splice(i, 1);
+      i -= 1;
+    }
+  }
   return restructuredText.join('');
 };
 
