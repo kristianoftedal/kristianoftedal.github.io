@@ -213,6 +213,24 @@ export default {
       if (this.search !== '') {
         list = list.filter(q => q.questionText.indexOf(this.search) > -1);
       }
+      // return list;
+      // debugger;
+      // for (let i = 0; i < this.questions.length; i++) {
+      //   if (this.questions[i].category === 'Kjemiske bindinger') {
+      //     const question = this.questions[i];
+      //     question.category = 'Kjemiske bindinger og reaksjonstyper';
+      //     const key = question['.key'];
+      //     delete question['.key'];
+      //     db.ref(this.dbRef).child(key).update(question);
+      //   }
+      //   if (this.questions[i].category === 'Termokjemi') {
+      //     const question = this.questions[i];
+      //     question.category = 'Termokjemi og reaksjonshastighet';
+      //     const key = question['.key'];
+      //     delete question['.key'];
+      //     db.ref(this.dbRef).child(key).update(question);
+      //   }
+      // }
       return list;
     },
     isEditable() {
