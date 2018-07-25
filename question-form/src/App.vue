@@ -936,9 +936,36 @@ there.
     text-align: center;
 }
 
-.bottom{
+.bottom {
     border-top: 1px solid #000;
     display: block;
+}
+
+.binomial, .topPart, .bottomPart {
+    padding: 0 5px;
+}
+
+.binomial {
+    display: inline-block;
+    text-align: center;
+}
+
+
+.topPart {
+    display: inline-block;
+    text-align: center;
+}
+
+.bottomPart {
+    display: block;
+}
+
+.squareRoot {
+  font-size: 125%;
+}
+
+.postSquareRoot {
+  border-top: 1px solid #000;
 }
 
 </style>

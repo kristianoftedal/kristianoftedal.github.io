@@ -165,8 +165,7 @@ import css from 'notie/dist/notie.min.css'; // eslint-disable-line
 import db from '../firebase';
 import getCategories from '../utils/categoryHelper';
 import getImages from '../utils/imageHelper';
-import formulaParser from '../utils/formulaParser';
-import fractionParser from '../utils/fractionParser';
+import prettyPrint from '../utils/prettyPrint';
 // import freeQuestions from './freeQuestions';
 
 export default {
@@ -202,19 +201,7 @@ export default {
       }
     },
     textParser(text) {
-      if (!text) {
-        return '<span></span>';
-      }
-      if (text.indexOf('*') > -1 && text.indexOf('#') > -1) {
-        return fractionParser(text);
-      }
-      if (text.indexOf('*') > -1 && !text.indexOf('#') > -1) {
-        return formulaParser(text);
-      }
-      if (text.indexOf('#') > -1) {
-        return fractionParser(text);
-      }
-      return `<span>${text}</span>`;
+      return prettyPrint(text);
     },
     blankQuestion() {
       return {

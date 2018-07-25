@@ -36,6 +36,16 @@
             <td><span v-html="textParser('#x-2/x-3#')"></span></td>
           </tr>
           <tr>
+            <td>Binomial</td>
+            <td>@a b/a b@</td>
+            <td><span v-html="textParser('@x-2/x-3@')"></span></td>
+          </tr>
+          <tr>
+            <td>Square root</td>
+            <td>√$x-2$</td>
+            <td><span v-html="textParser('√$x-2$')"></span></td>
+          </tr>
+          <tr>
             <td>Combo #1</td>
             <td>*Cr_23|O_73|^2-|*</td>
             <td><span v-html="textParser('*Cr_23|O_73|^2-|*')"></span></td>
@@ -49,6 +59,11 @@
             <td>Combo #3</td>
             <td>(#x-2/x-3#)*^2|*</td>
             <td><span v-html="textParser('(#x-2/x-3#)*^2|*')"></span></td>
+          </tr>
+          <tr>
+            <td>Combo #4</td>
+            <td>√$*x-2^2|*$</td>
+            <td><span v-html="textParser('√$ *x-2^2|* $')"></span></td>
           </tr>
         </tbody>
       </table>
@@ -64,27 +79,13 @@
 </template>
 
 <script>
-import formulaParser from '../utils/formulaParser';
-import fractionParser from '../utils/fractionParser';
+import prettyPrint from '../utils/prettyPrint';
 
 export default {
   name: 'Forumlas',
   methods: {
     textParser(text) {
-      debugger;
-      if (!text) {
-        return '<span></span>';
-      }
-      if (text.indexOf('*') > -1 && text.indexOf('#') > -1) {
-        return fractionParser(text);
-      }
-      if (text.indexOf('*') > -1 && !text.indexOf('#') > -1) {
-        return formulaParser(text);
-      }
-      if (text.indexOf('#') > -1) {
-        return fractionParser(text);
-      }
-      return `<span>${text}</span>`;
+      return prettyPrint(text);
     },
   },
   data() {

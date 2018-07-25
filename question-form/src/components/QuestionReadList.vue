@@ -37,7 +37,9 @@
             <span>id: {{question.id}}</span>
           </div>
           <div class="one columns">
-            <button class="button" v-if="!question.editable" v-on:click="editQuestion(question)">✎ Rediger</button>
+            <button class="button"
+              v-if="!question.editable"
+              v-on:click="editQuestion(question)">✎ Rediger</button>
             <button
               class="button-primary"
               v-if="question.editable"
@@ -47,7 +49,9 @@
         <div class="row">
           <div class="twelve columns">
             <h5 v-html="textParser(question.questionText)"> {{isEdit[question.id]}}</h5>
-            <input v-if="question.editable" v-model="question.questionText" class="u-full-width" type="text" id="qtxt">
+            <input
+              v-if="question.editable"
+              v-model="question.questionText" class="u-full-width" type="text" id="qtxt">
           </div>
         </div>
         <div class="row">
@@ -56,7 +60,10 @@
           </div>
           <div class="ten columns">
             <span v-html="textParser(question.explanation)"></span>
-            <textarea v-if="question.editable" v-model="question.explanation" class="u-full-width" type="text" id="extxt"></textarea>
+            <textarea
+              v-if="question.editable"
+              v-model="question.explanation"
+              class="u-full-width" type="text" id="extxt"></textarea>
           </div>
         </div>
         <div class="row">
@@ -65,7 +72,8 @@
           </div>
           <div class="ten columns">
             <span v-if="!question.editable" >{{question.category}}</span>
-            <select v-if="question.editable" class="u-full-width" id="category" v-model="question.category">
+            <select v-if="question.editable"
+              class="u-full-width" id="category" v-model="question.category">
               <option v-bind:key="category"
                 v-for="category in categories"
                 v-bind:value="category"
@@ -84,7 +92,9 @@
             <span v-if="!isEdit.includes(question.id)">{{question.imageId ?
               images.filter(i => i.id === question.imageId)[0] : 'Nei'}}
             </span>
-            <select v-if="question.editable" class="u-full-width" id="bilde" v-model="question.imageId">
+            <select
+              v-if="question.editable"
+              class="u-full-width" id="bilde" v-model="question.imageId">
               <option value="">Nei</option>
               <option
                 v-bind:key="image.id"
@@ -94,7 +104,8 @@
                 {{ image.image }}
               </option>
             </select>
-            <img v-if="question.imageId" class="questionImage" v-bind:src="getImageSrc(question.imageId)"/>
+            <img v-if="question.imageId"
+            class="questionImage" v-bind:src="getImageSrc(question.imageId)"/>
           </div>
         </div>
         <div class="row">
@@ -102,7 +113,8 @@
             <span>A:</span>
           </div>
           <div class="ten columns">
-            <span v-if="!question.editable"  v-html="textParser(question.answers[0].value)"></span>
+            <span v-if="!question.editable"
+              v-html="textParser(question.answers[0].value)"></span>
             <input
               v-if="question.editable"
               class="u-full-width"
@@ -116,7 +128,9 @@
             <span>B:</span>
           </div>
           <div class="ten columns">
-            <span v-if="!question.editable" v-html="textParser(question.answers[1].value)"></span>
+            <span
+              v-if="!question.editable"
+              v-html="textParser(question.answers[1].value)"></span>
             <input
               v-if="question.editable"
               class="u-full-width"
@@ -130,7 +144,9 @@
             <span>C:</span>
           </div>
           <div class="ten columns">
-            <span v-if="!question.editable" v-html="textParser(question.answers[2].value)"></span>
+            <span
+              v-if="!question.editable"
+              v-html="textParser(question.answers[2].value)"></span>
             <input
               v-if="question.editable"
               class="u-full-width"
@@ -144,7 +160,9 @@
           <span>D:</span>
           </div>
           <div class="ten columns">
-            <span v-if="!question.editable" v-html="textParser(question.answers[3].value)"></span>
+            <span
+              v-if="!question.editable"
+              v-html="textParser(question.answers[3].value)"></span>
             <input
               v-if="question.editable"
               class="u-full-width"
@@ -159,7 +177,9 @@
           </div>
           <div class="ten columns">
             <span v-if="!question.editable">{{question.solution}}</span>
-            <select v-if="question.editable" class="u-full-width" id="category" v-model="question.solution">
+            <select
+              v-if="question.editable"
+              class="u-full-width" id="category" v-model="question.solution">
               <option value="a">A</option>
               <option value="b">B</option>
               <option value="c">C</option>
@@ -189,9 +209,8 @@
 
 <script>
 import notie from 'notie';
-import css from 'notie/dist/notie.min.css';
-import formulaParser from '../utils/formulaParser';
-import fractionParser from '../utils/fractionParser';
+import css from 'notie/dist/notie.min.css'; // eslint-disable-line
+import prettyPrint from '../utils/prettyPrint';
 import getImages from '../utils/imageHelper';
 import db from '../firebase';
 import getCategories from '../utils/categoryHelper';
@@ -246,19 +265,7 @@ export default {
   },
   methods: {
     textParser(text) {
-      if (!text) {
-        return '<span></span>';
-      }
-      if (text.indexOf('*') > -1 && text.indexOf('#') > -1) {
-        return fractionParser(text);
-      }
-      if (text.indexOf('*') > -1 && !text.indexOf('#') > -1) {
-        return formulaParser(text);
-      }
-      if (text.indexOf('#') > -1) {
-        return fractionParser(text);
-      }
-      return `<span>${text}</span>`;
+      return prettyPrint(text);
     },
     getImageSrc(id) {
       const image = this.images.find(e => e.id === id);
@@ -275,10 +282,10 @@ export default {
     },
     editQuestion(question) {
       this.isEdit.push(question.id);
-      question.editable = !question.editable;
+      question.editable = !question.editable; // eslint-disable-line
     },
     updateQuestion(question) {
-      question.editable = !question.editable;
+      question.editable = !question.editable; // eslint-disable-line
       const key = question['.key'];
       delete question['.key']; // eslint-disable-line
       db.ref(this.dbRef).child(key).update(question);
