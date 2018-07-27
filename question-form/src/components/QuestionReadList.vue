@@ -208,6 +208,7 @@
 </template>
 
 <script>
+import uuid from 'uuid/v1';
 import notie from 'notie';
 import css from 'notie/dist/notie.min.css'; // eslint-disable-line
 import prettyPrint from '../utils/prettyPrint';
@@ -241,9 +242,15 @@ export default {
       if (this.search !== '') {
         list = list.filter(q => q.questionText.indexOf(this.search) > -1);
       }
-      // return list;
+      // const qList = this.questions.filter(q => q.category === 'Redoksreaksjoner');
+      // for (let i = 0; i < qList.length; i++) {
+      //     debugger;
+      //     const question = qList[i];
+      //     question.id = uuid();
+      //     db.ref('kjemi2Questions').child(question['.key']).remove();
+      // }
       // for (let i = 0; i < this.questions.length; i++) {
-      //   if (this.questions[i].category === 'Kjemiske bindinger') {
+      //   if (this.questions[i].category === 'Redoksreaksjoner') {
       //     debugger;
       //     const question = this.questions[i];
       //     question.category = 'Kjemiske bindinger og reaksjonstyper';

@@ -10,8 +10,10 @@ const squareRootParser = (question) => {
       restructuredText.push(`<span class="squareRoot">${parts[i]}</span>`);
     } else if (parts[i] === '') {
       // do nothing
-    } else {
+    } else if (i < 2) {
       restructuredText.push(`<span class="postSquareRoot"><span>${formulaParser(parts[i])}</span></span>`);
+    } else {
+      restructuredText.push(`<span>${formulaParser(parts[i])}</span>`);
     }
   }
   return restructuredText.join('');
