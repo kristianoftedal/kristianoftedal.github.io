@@ -5,6 +5,8 @@ import kjemi1Categories from '../components/kjemi1/categories';
 import kjemi2Categories from '../components/kjemi2/categories';
 import fysikk1Categories from '../components/fysikk1/categories';
 import s1Categories from '../components/s1/categories';
+import onePCategories from '../components/1p/categories';
+import r1Categories from '../components/r1/categories';
 
 
 const getCategories = (subject) => {
@@ -31,6 +33,13 @@ const getCategories = (subject) => {
   }
   if (subject.indexOf('geografi') > -1) {
     return geoCategories;
+  }
+  if (subject.indexOf('r1') > -1) {
+    return r1Categories;
+  }
+  if (subject.indexOf('1p') > -1) {
+    debugger;
+    return onePCategories;
   }
   return null;
 };

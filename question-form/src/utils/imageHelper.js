@@ -4,8 +4,9 @@ import geoImages from '../components/geo/images';
 import kjemi1Images from '../components/kjemi1/images';
 import kjemi2Images from '../components/kjemi2/images';
 import fysikk1Images from '../components/fysikk1/images';
-import s11tImages from '../components/s1/images';
-
+import s1Images from '../components/s1/images';
+import r1Images from '../components/r1/images';
+import onePImages from '../components/1p/images';
 
 const getImages = (subject) => {
   if (subject.indexOf('naturfag') > -1) {
@@ -27,10 +28,16 @@ const getImages = (subject) => {
     return naturfagImages;
   }
   if (subject.indexOf('s1') > -1 || subject.indexOf('1t') > -1) {
-    return s11tImages;
+    return s1Images;
   }
   if (subject.indexOf('geo') > -1) {
     return geoImages;
+  }
+  if (subject.indexOf('r1') > -1) {
+    return r1Images;
+  }
+  if (subject.indexOf('1p') > -1) {
+    return onePImages;
   }
   return null;
 };

@@ -82,6 +82,26 @@
             to="/readlist/fysikk1">Leselisten Fysikk 1</router-link>
           <hr/>
         </div>
+        <div>
+          <h5>R1</h5>
+          <router-link class="button"
+            to="/status/r1">Oversikt R1</router-link>
+          <router-link class="button"
+            to="/form/r1">Nye spørsmål R1</router-link>
+          <router-link class="button"
+            to="/readlist/r1">Leselisten R1</router-link>
+          <hr/>
+        </div>
+        <div>
+          <h5>1P</h5>
+          <router-link class="button"
+            to="/status/1p">Oversikt 1P</router-link>
+          <router-link class="button"
+            to="/form/1p">Nye spørsmål 1P</router-link>
+          <router-link class="button"
+            to="/readlist/1p">Leselisten 1P</router-link>
+          <hr/>
+        </div>
       </div>
     </div>
   </div>

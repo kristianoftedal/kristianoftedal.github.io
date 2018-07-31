@@ -52,6 +52,18 @@
           to="/form/fysikk1Questions">Nye spørsmål Fysikk 1</router-link>
         <router-link v-if="shouldShowRoute('fysikk1')"
           to="/readlist/fysikk1Questions">Leselisten Fysikk 1</router-link>
+        <router-link v-if="shouldShowRoute('1p')"
+          to="/status/1pQuestions">Oversikt 1P</router-link>
+        <router-link v-if="shouldShowRoute('1p')"
+          to="/form/1pQuestions">Nye spørsmål 1P</router-link>
+        <router-link v-if="shouldShowRoute('1p')"
+          to="/readlist/1pQuestions">Leselisten 1P</router-link>
+        <router-link v-if="shouldShowRoute('r1')"
+          to="/status/r1Questions">Oversikt R1</router-link>
+        <router-link v-if="shouldShowRoute('r1')"
+          to="/form/r1Questions">Nye spørsmål R1</router-link>
+        <router-link v-if="shouldShowRoute('r1')"
+          to="/readlist/r1Questions">Leselisten R1</router-link>
         <router-view></router-view>
       </div>
     </div>

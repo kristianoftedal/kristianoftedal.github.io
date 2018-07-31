@@ -233,11 +233,10 @@ export default {
     },
     filteredQuestions() {
       let list = this.questions;
-      if (this.categoryFilter) {
+      if (this.categoryFilter && this.categoryFilter !== 'lost') {
         list = list.filter(q => q.category === this.categoryFilter);
-      }
-      if (this.categoryFilter === 'lost') {
-        list = list.filter(q => !q.category || q.category === '' || !this.categories.includes(q.category));
+      } else if (this.categoryFilter === 'lost') {
+        list = list.filter(q => !q.category || q.category === '' || q.category === ' ' || !this.categories.includes(q.category));
       }
       if (this.search !== '') {
         list = list.filter(q => q.questionText.indexOf(this.search) > -1);
