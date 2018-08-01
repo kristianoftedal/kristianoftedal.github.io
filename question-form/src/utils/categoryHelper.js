@@ -31,7 +31,7 @@ const getCategories = (subject) => {
   if (subject.indexOf('s1') > -1) {
     return s1Categories;
   }
-  if (subject.indexOf('geografi') > -1) {
+  if (subject.indexOf('geo') > -1) {
     return geoCategories;
   }
   if (subject.indexOf('r1') > -1) {
