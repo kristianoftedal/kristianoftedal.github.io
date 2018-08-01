@@ -1,5 +1,5 @@
 const categories = [
-  'Tall og bokstavregning',
+  'Tall- og bokstavregning',
   'Logaritmer',
   'Likninger og ulikheter',
   'Funksjoner og regresjon',
