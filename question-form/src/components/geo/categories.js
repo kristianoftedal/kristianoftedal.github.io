@@ -1,5 +1,4 @@
 const categories = [
-  'Kart',
   'Ytre krefter',
   'Indre krefter',
   'Vær og klima',
