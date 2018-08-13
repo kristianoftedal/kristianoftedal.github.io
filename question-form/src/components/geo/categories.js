@@ -3,7 +3,7 @@ const categories = [
   'Indre krefter',
   'Vær og klima',
   'Bosetning og næringsliv',
-  'Landbruk og arealbruk',
+  'Landskap og arealbruk',
   'Demografi',
   'Globalisering og fattigdom',
 ];

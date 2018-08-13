@@ -241,17 +241,17 @@ export default {
       notie.alert({ type: 1, text: 'Spørsmål slettet 😀' });
     },
     downloadFile() {
-      // const questions = this.questions;
+      const questions = this.questions;
       // const questions = this.questions.filter(e => freeQuestions.indexOf(e.id) >= 0);
-      // const fileName = 'questions.json';
-      // let data = 'data:text/json;charset=utf-8,@';
-      // data += encodeURI(JSON.stringify(questions));
-      // const downloadAnchorNode = document.createElement('a');
-      // downloadAnchorNode.setAttribute('href', data);
-      // downloadAnchorNode.setAttribute('download', fileName);
-      // document.body.appendChild(downloadAnchorNode);
-      // downloadAnchorNode.click();
-      // downloadAnchorNode.remove();
+      const fileName = 'questions.json';
+      let data = 'data:text/json;charset=utf-8,@';
+      data += encodeURI(JSON.stringify(questions));
+      const downloadAnchorNode = document.createElement('a');
+      downloadAnchorNode.setAttribute('href', data);
+      downloadAnchorNode.setAttribute('download', fileName);
+      document.body.appendChild(downloadAnchorNode);
+      downloadAnchorNode.click();
+      downloadAnchorNode.remove();
     },
   },
   data() {
