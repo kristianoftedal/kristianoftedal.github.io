@@ -3,9 +3,8 @@ import formulaParser from '../utils/formulaParser';
 
 const squareRootParser = (question) => {
   if (question == null) return (<Text />);
-  question = 'Skriv √$180$ så enkelt som mulig';
+  // question = 'Skriv √$180$ så enkelt som mulig';
   const parts = question.split('$');
-  //question = 'Skriv √$180$ så enkelt som mulig';
   const restructuredText = [];
   debugger;
   let preSquareRoot = true;
