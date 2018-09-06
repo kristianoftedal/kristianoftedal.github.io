@@ -236,10 +236,20 @@ export default {
       if (this.categoryFilter && this.categoryFilter !== 'lost') {
         list = list.filter(q => q.category === this.categoryFilter);
       } else if (this.categoryFilter === 'lost') {
-        list = list.filter(q => !q.category || q.category === '' || q.category === ' ' || !this.categories.includes(q.category));
+        list = list.filter(
+          q =>
+            !q.category ||
+            q.category === '' ||
+            q.category === ' ' ||
+            !this.categories.includes(q.category),
+        );
       }
       if (this.search !== '') {
-        list = list.filter(q => q.questionText.indexOf(this.search) > -1);
+        list = list.filter(
+          q =>
+            q.questionText.indexOf(this.search) > -1 ||
+            q.imageId.indexOf(this.search) > -1,
+        );
       }
       // const qList = this.questions.filter(q => q.category === 'Redoksreaksjoner');
       // for (let i = 0; i < qList.length; i++) {
@@ -294,7 +304,10 @@ export default {
       question.editable = !question.editable; // eslint-disable-line
       const key = question['.key'];
       delete question['.key']; // eslint-disable-line
-      db.ref(this.dbRef).child(key).update(question);
+      db
+        .ref(this.dbRef)
+        .child(key)
+        .update(question);
       this.isEdit.splice(this.isEdit.indexOf(question.id), 1);
       notie.alert({ type: 1, text: 'Endring lagret 😀' });
     },

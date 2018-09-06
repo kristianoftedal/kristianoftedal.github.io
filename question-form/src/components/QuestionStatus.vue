@@ -33,6 +33,7 @@
               <th>Antall lette</th>
               <th>Antall middels</th>
               <th>Antall vanskelige</th>
+              <th>Antall uten forklaring</th>
             </tr>
           </thead>
           <tbody>
@@ -42,9 +43,17 @@
               <td>{{categoryCount.easyCount}}</td>
               <td>{{categoryCount.mediumCount}}</td>
               <td>{{categoryCount.hardCount}}</td>
+              <td>{{categoryCount.noExplanationCount}}</td>
             </tr>
           </tbody>
         </table>
+        <h6>De uten forklaring:</h6>
+        <ul>
+          <li v-for="question in noExplanationCount" v-bind:key="question.id">
+            <span>{{question.id}}</span>
+            <span>{{question.questionText}}</span>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
@@ -78,18 +87,37 @@ export default {
     hardCount() {
       return this.questions.filter(q => q.difficulty === 'Vanskelig').length;
     },
+    noExplanationCount() {
+      return this.questions.filter(q => q.explanation === '' || !q.explanation);
+    },
     categoryCounts() {
       const categoriesCount = [];
       const categories = getCategories(this.dbRef);
       for (let i = 0; i < categories.length; i += 1) {
-        const count = this.questions.filter(q => q.category === categories[i]).length;
-        const easyCount = this.questions.filter(q => q.category === categories[i]
-          && q.difficulty === 'Lett').length;
-        const mediumCount = this.questions.filter(q => q.category === categories[i]
-        && q.difficulty === 'Middels').length;
-        const hardCount = this.questions.filter(q => q.category === categories[i]
-        && q.difficulty === 'Vanskelig').length;
-        categoriesCount.push({ name: categories[i], count, easyCount, mediumCount, hardCount });
+        const count = this.questions.filter(q => q.category === categories[i])
+          .length;
+        const easyCount = this.questions.filter(
+          q => q.category === categories[i] && q.difficulty === 'Lett',
+        ).length;
+        const mediumCount = this.questions.filter(
+          q => q.category === categories[i] && q.difficulty === 'Middels',
+        ).length;
+        const hardCount = this.questions.filter(
+          q => q.category === categories[i] && q.difficulty === 'Vanskelig',
+        ).length;
+        const noExplanationCount = this.questions.filter(
+          q =>
+            q.category === categories[i] &&
+            (q.explanation === '' || !q.explanation),
+        ).length;
+        categoriesCount.push({
+          name: categories[i],
+          count,
+          easyCount,
+          mediumCount,
+          hardCount,
+          noExplanationCount,
+        });
       }
       return categoriesCount;
     },
@@ -99,10 +127,10 @@ export default {
 
 <!-- Add 'scoped' attribute to limit CSS to this component only -->
 <style scoped>
- .kjemiaLogo {
+.kjemiaLogo {
   font-family: 'Lato', sans-serif !important;
-  }
-  .kjemiaImage {
-    width: 200px;
-  }
+}
+.kjemiaImage {
+  width: 200px;
+}
 </style>
