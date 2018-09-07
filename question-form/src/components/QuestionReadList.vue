@@ -245,37 +245,8 @@ export default {
         );
       }
       if (this.search !== '') {
-        list = list.filter(
-          q =>
-            q.questionText.indexOf(this.search) > -1 ||
-            q.imageId.indexOf(this.search) > -1,
-        );
+        list = list.filter(q => q.questionText.indexOf(this.search) > -1 || q.imageId.indexOf(this.search) > -1);
       }
-      // const qList = this.questions.filter(q => q.category === 'Redoksreaksjoner');
-      // for (let i = 0; i < qList.length; i++) {
-      //     debugger;
-      //     const question = qList[i];
-      //     question.id = uuid();
-      //     db.ref('kjemi2Questions').child(question['.key']).remove();
-      // }
-      // for (let i = 0; i < this.questions.length; i++) {
-      //   if (this.questions[i].category === 'Redoksreaksjoner') {
-      //     debugger;
-      //     const question = this.questions[i];
-      //     question.category = 'Kjemiske bindinger og reaksjonstyper';
-      //     const key = question['.key'];
-      //     delete question['.key'];
-      //     db.ref(this.dbRef).child(key).update(question);
-      //   }
-      //   if (this.questions[i].category === 'Termokjemi') {
-      //     debugger;
-      //     const question = this.questions[i];
-      //     question.category = 'Termokjemi og reaksjonshastighet';
-      //     const key = question['.key'];
-      //     delete question['.key'];
-      //     db.ref(this.dbRef).child(key).update(question);
-      //   }
-      // }
       return list;
     },
   },
