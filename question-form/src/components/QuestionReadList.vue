@@ -215,6 +215,7 @@ import prettyPrint from '../utils/prettyPrint';
 import getImages from '../utils/imageHelper';
 import db from '../firebase';
 import getCategories from '../utils/categoryHelper';
+// import replace from './replace';
 
 export default {
   name: 'QuestionReadList',
@@ -247,6 +248,21 @@ export default {
       if (this.search !== '') {
         list = list.filter(q => q.questionText.indexOf(this.search) > -1 || q.imageId.indexOf(this.search) > -1);
       }
+      // for (let i = 0; i < this.questions.length; i++) {
+      //   const question = this.questions[i];
+      //   for (let j = 0; j < replace.length; j++) {
+      //     const current = replace[j];
+      //     if (question.explanation)
+      //       question.explanation = question.explanation.replace(current.key, current.value);
+      //     question.questionText = question.questionText.replace(current.key, current.value);
+      //     for (let k = 0; k < question.answers.length; k++) {
+      //       question.answers[k].value = question.answers[k].value.replace(current.key, current.value);
+      //     }
+      //   }
+      //   const key = question['.key'];
+      //   delete question['.key'];
+      //   db.ref(this.dbRef).child(key).update(question);
+      // }
       return list;
     },
   },
