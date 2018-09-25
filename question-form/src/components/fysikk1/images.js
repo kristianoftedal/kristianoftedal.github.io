@@ -11,7 +11,7 @@ import fourB from '../../assets/naturfag/4B.png';
 import fourC from '../../assets/naturfag/4C.png';
 import fourE from '../../assets/naturfag/4E.png';
 import fiveA from '../../assets/naturfag/5A.png';
-import fiveB from '../../assets/naturfag/5B.jpg';
+import fiveB from '../../assets/naturfag/5B.png';
 import fiveC from '../../assets/naturfag/5C.png';
 import fiveD from '../../assets/naturfag/5D.png';
 // import fiveF from '../../assets/naturfag/5F.bmp';
