@@ -40,6 +40,9 @@
             <button class="button"
               v-if="!question.editable"
               v-on:click="editQuestion(question)">✎ Rediger</button>
+            <button class="button" style="background-color: #e74c3c; color: #FFF"
+              v-if="!question.editable"
+              v-on:click="deleteQuestion(question)">💀 slett 💀</button>
             <button
               class="button-primary"
               v-if="question.editable"
@@ -287,6 +290,10 @@ export default {
       this.isEdit.push(question.id);
       question.editable = !question.editable; // eslint-disable-line
     },
+    deleteQuestion(question) {
+      db.ref(this.dbRef).child(question['.key']).remove();
+      notie.alert({ type: 1, text: 'Spørsmål slettet 😀' });
+    },
     updateQuestion(question) {
       question.editable = !question.editable; // eslint-disable-line
       const key = question['.key'];
@@ -296,6 +303,7 @@ export default {
         .child(key)
         .update(question);
       this.isEdit.splice(this.isEdit.indexOf(question.id), 1);
+      question['.key'] = key;
       notie.alert({ type: 1, text: 'Endring lagret 😀' });
     },
   },
