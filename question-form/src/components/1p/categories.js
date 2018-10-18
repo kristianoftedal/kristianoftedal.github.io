@@ -2,7 +2,7 @@ const categories = [
   'Tall- og bokstavregning',
   'Likninger',
   'Lengder og vinkler',
-  'Area og volum',
+  'Areal og volum',
   'Funksjoner',
   'Økonomi',
   'Sannsynlighet',
