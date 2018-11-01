@@ -31,6 +31,8 @@
             to="/form/kjemi1Questions">Nye spørsmål Kjemi 1</router-link>
           <router-link class="button"
             to="/readlist/kjemi1Questions">Leselisten Kjemi 1</router-link>
+          <router-link class="button"
+            to="/images/kjemi1Questions">Bilder i Kjemi 1</router-link>
           <hr/>
         </div>
         <div>

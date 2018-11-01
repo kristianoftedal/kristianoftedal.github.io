@@ -4,6 +4,7 @@ import QuestionForm from '../components/QuestionForm';
 import Questionstatus from '../components/QuestionStatus';
 import QuestionReadlist from '../components/QuestionReadList';
 import Formulas from '../components/Formulas';
+import Images from '../components/Images';
 import Index from '../components/Index';
 
 Vue.use(Router);
@@ -36,6 +37,12 @@ export default new Router({
       path: '/formulas',
       name: 'Formulas',
       component: Formulas,
+      props: true,
+    },
+    {
+      path: '/Images/:dbRef',
+      name: 'Images',
+      component: Images,
       props: true,
     },
   ],

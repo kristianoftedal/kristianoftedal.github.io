@@ -28,6 +28,8 @@
           to="/form/kjemi1Questions">Nye spørsmål Kjemi 1</router-link>
         <router-link v-if="shouldShowRoute('kjemi1')"
           to="/readlist/kjemi1Questions">Leselisten Kjemi 1</router-link>
+        <router-link v-if="shouldShowRoute('kjemi1')"
+          to="/images/kjemi1Questions">Bilder i Kjemi 1</router-link>
         <router-link v-if="shouldShowRoute('1t')"
           to="/status/1tQuestions">Oversikt 1t</router-link>
         <router-link v-if="shouldShowRoute('1t')"

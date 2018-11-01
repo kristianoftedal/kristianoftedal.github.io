@@ -20,6 +20,7 @@
     "vue": "^2.5.2",
     "vue-router": "^3.0.1",
     "vuefire": "^1.4.5",
+    "vueisotope": "^3.1.2",
     "vuetify": "^0.17.6"
   },
   "devDependencies": {
