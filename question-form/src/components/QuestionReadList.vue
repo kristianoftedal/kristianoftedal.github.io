@@ -211,7 +211,6 @@
 </template>
 
 <script>
-import uuid from 'uuid/v1';
 import notie from 'notie';
 import css from 'notie/dist/notie.min.css'; // eslint-disable-line
 import prettyPrint from '../utils/prettyPrint';
@@ -249,7 +248,8 @@ export default {
         );
       }
       if (this.search !== '') {
-        list = list.filter(q => q.questionText.indexOf(this.search) > -1 || q.imageId.indexOf(this.search) > -1);
+        list = list.filter(q =>
+          q.questionText.indexOf(this.search) > -1 || q.imageId.indexOf(this.search) > -1);
       }
       // for (let i = 0; i < this.questions.length; i++) {
       //   const question = this.questions[i];
@@ -259,7 +259,8 @@ export default {
       //       question.explanation = question.explanation.replace(current.key, current.value);
       //     question.questionText = question.questionText.replace(current.key, current.value);
       //     for (let k = 0; k < question.answers.length; k++) {
-      //       question.answers[k].value = question.answers[k].value.replace(current.key, current.value);
+      //       question.answers[k].value =
+      //          question.answers[k].value.replace(current.key, current.value);
       //     }
       //   }
       //   const key = question['.key'];

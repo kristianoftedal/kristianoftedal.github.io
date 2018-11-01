@@ -1,3 +1,16 @@
+import sevenC from '../../assets/geo/7C.png';
+import sevenD from '../../assets/geo/7D.png';
+import sevenE from '../../assets/geo/7E.png';
+import sevenF from '../../assets/geo/7F.png';
+import eightE from '../../assets/geo/8E.png';
+import nineA from '../../assets/geo/9A.png';
+import nineB from '../../assets/geo/9B.png';
+import nineC from '../../assets/geo/9C.png';
+import nineD from '../../assets/geo/9D.png';
+import nineF from '../../assets/geo/9F.png';
+import tenD from '../../assets/geo/10D.png';
+import tenE from '../../assets/geo/10E.png';
+
 const images =
   [
     {
@@ -199,18 +212,22 @@ const images =
     {
       id: 'c383f31f-2837-7387-c46e-420d34b77015',
       image: '7C',
+      src: sevenC,
     },
     {
       id: 'f6957b32-9509-c509-6b70-37d324d0b9f4',
       image: '7D',
+      src: sevenD,
     },
     {
       id: '13c45c82-836c-3818-a03d-cd16ff5a1225',
       image: '7E',
+      src: sevenE,
     },
     {
       id: 'd884699d-3c8f-52f1-6efe-b60f0fbe10ce',
       image: '7F',
+      src: sevenF,
     },
     {
       id: '094c0bcb-b950-90fc-d89b-3642bb03befd',
@@ -231,10 +248,12 @@ const images =
     {
       id: '9fe93828-6b15-02e5-e4c8-3a006d7d11ec',
       image: '8E',
+      src: eightE,
     },
     {
       id: 'f4e6f6fa-9d1b-c61d-8994-d9a76b462957',
       image: '9A',
+      src: nineA,
     },
     {
       id: '1fc1ff3e-5d63-4eeb-8428-e9d0fd998cba',
@@ -243,14 +262,17 @@ const images =
     {
       id: 'b650838f-ef5a-aac4-b6b5-3e5edbbb7abe',
       image: '9B',
+      src: nineB,
     },
     {
       id: 'aad6732d-944e-12a7-21a5-b7f0673b2171',
       image: '9C',
+      src: nineC,
     },
     {
       id: '9d4c7f54-6e2b-00b6-c112-e272f8ad99ce',
       image: '9D',
+      src: nineD,
     },
     {
       id: 'ee333f8d-cfba-e69c-eb7e-897e98a5b79d',
@@ -259,6 +281,7 @@ const images =
     {
       id: '31aa1951-537c-45ad-63b1-b19ddd85790a',
       image: '9F',
+      src: nineF,
     },
     {
       id: '60d5d315-eae5-42b7-80f3-68678199c1da',
@@ -311,10 +334,12 @@ const images =
     {
       id: '93f63388-4499-f062-d22e-768de2c0acfb',
       image: '10D',
+      src: tenD,
     },
     {
       id: '6d1db61d-5344-064f-d831-35b1d9498796',
       image: '10E',
+      src: tenE,
     },
     {
       id: '538b9631-9295-48c4-40df-cf604e549954',

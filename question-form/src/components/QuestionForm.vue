@@ -166,7 +166,7 @@ import db from '../firebase';
 import getCategories from '../utils/categoryHelper';
 import getImages from '../utils/imageHelper';
 import prettyPrint from '../utils/prettyPrint';
-import freeQuestions from './naturfag/freeQuestions';
+// import freeQuestions from './naturfag/freeQuestions';
 
 export default {
   name: 'QuestionForm',
@@ -241,14 +241,8 @@ export default {
       notie.alert({ type: 1, text: 'Spørsmål slettet 😀' });
     },
     downloadFile() {
-      let questions = this.questions;
-      questions = questions.filter(e =>
-        e.category === 'Økologi og bærekraftig utvikling' || 
-        e.category === 'Elektromagnetisk stråling' || 
-        e.category === 'Bioteknologi' || 
-        e.category === 'DNA' || 
-        e.category === 'Redoksreaksjoner' || 
-        e.category === 'Radioaktiv stråling');
+      const questions = this.questions;
+
       const fileName = 'questions.json';
       let data = 'data:text/json;charset=utf-8,@';
       data += encodeURI(JSON.stringify(questions));

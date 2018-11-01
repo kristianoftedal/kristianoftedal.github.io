@@ -2,70 +2,32 @@
   <div id="app">
     <div class="container">
       <div class="row">
-        <router-link
-          v-if="shouldShowRoute('naturfag')"
-          to="/status/naturfagQuestions"
-        >
-            Oversikt Naturfag
-        </router-link>
-        <router-link
-          v-if="shouldShowRoute('naturfag')"
-          to="/form/naturfagQuestions">
-            Nye spørsmål Naturfag</router-link>
-        <router-link
-          v-if="shouldShowRoute('naturfag')"
-          to="/readlist/naturfagQuestions">Leselisten Naturfag</router-link>
-        <router-link
-          v-if="shouldShowRoute('kjemi2')"
-          to="/status/kjemi2Questions">Oversikt Kjemi 2</router-link>
-        <router-link v-if="shouldShowRoute('kjemi2')"
-          to="/form/kjemi2Questions">Nye spørsmål Kjemi 2</router-link>
-        <router-link v-if="shouldShowRoute('kjemi2')"
-          to="/readlist/kjemi2Questions">Leselisten Kjemi 2</router-link>
-        <router-link v-if="shouldShowRoute('kjemi1')"
-          to="/status/kjemi1Questions">Oversikt Kjemi 1</router-link>
-        <router-link v-if="shouldShowRoute('kjemi1')"
-          to="/form/kjemi1Questions">Nye spørsmål Kjemi 1</router-link>
-        <router-link v-if="shouldShowRoute('kjemi1')"
-          to="/readlist/kjemi1Questions">Leselisten Kjemi 1</router-link>
-        <router-link v-if="shouldShowRoute('kjemi1')"
-          to="/images/kjemi1Questions">Bilder i Kjemi 1</router-link>
-        <router-link v-if="shouldShowRoute('1t')"
-          to="/status/1tQuestions">Oversikt 1t</router-link>
-        <router-link v-if="shouldShowRoute('1t')"
-          to="/form/1tQuestions">Nye spørsmål 1t</router-link>
-        <router-link v-if="shouldShowRoute('1t')"
-          to="/readlist/1tQuestions">Leselisten 1t</router-link>
-        <router-link v-if="shouldShowRoute('s1')"
-          to="/status/s1Questions">Oversikt s1</router-link>
-        <router-link v-if="shouldShowRoute('s1')"
-          to="/form/s1Questions">Nye spørsmål s1</router-link>
-        <router-link v-if="shouldShowRoute('s1')"
-          to="/readlist/s1Questions">Leselisten s1</router-link>
-        <router-link v-if="shouldShowRoute('geo')"
-          to="/status/geoQuestions">Oversikt geo</router-link>
-        <router-link v-if="shouldShowRoute('geo')"
-          to="/form/geoQuestions">Nye spørsmål geo</router-link>
-        <router-link v-if="shouldShowRoute('geo')"
-          to="/readlist/geoQuestions">Leselisten geo</router-link>
-        <router-link v-if="shouldShowRoute('fysikk1')"
-          to="/status/fysikk1Questions">Oversikt Fysikk 1</router-link>
-        <router-link v-if="shouldShowRoute('fysikk1')"
-          to="/form/fysikk1Questions">Nye spørsmål Fysikk 1</router-link>
-        <router-link v-if="shouldShowRoute('fysikk1')"
-          to="/readlist/fysikk1Questions">Leselisten Fysikk 1</router-link>
-        <router-link v-if="shouldShowRoute('1p')"
-          to="/status/1pQuestions">Oversikt 1P</router-link>
-        <router-link v-if="shouldShowRoute('1p')"
-          to="/form/1pQuestions">Nye spørsmål 1P</router-link>
-        <router-link v-if="shouldShowRoute('1p')"
-          to="/readlist/1pQuestions">Leselisten 1P</router-link>
-        <router-link v-if="shouldShowRoute('r1')"
-          to="/status/r1Questions">Oversikt R1</router-link>
-        <router-link v-if="shouldShowRoute('r1')"
-          to="/form/r1Questions">Nye spørsmål R1</router-link>
-        <router-link v-if="shouldShowRoute('r1')"
-          to="/readlist/r1Questions">Leselisten R1</router-link>
+        <div v-for="subject in subjects" :key="subject">
+          <router-link
+            v-if="shouldShowRoute(subject)"
+            :to="getUrl('/status/subjectQuestions', subject)"
+          >
+              Oversikt {{subject}}
+          </router-link>
+          <router-link
+            v-if="shouldShowRoute(subject)"
+            :to="getUrl('/form/subjectQuestions', subject)"
+          >
+              Nye spørsmål {{subject}}
+          </router-link>
+          <router-link
+            v-if="shouldShowRoute(subject)"
+            :to="getUrl('/readlist/subjectQuestions', subject)"
+          >
+              Leselisten {{subject}}
+          </router-link>
+          <router-link
+            v-if="shouldShowRoute(subject)"
+            :to="getUrl('/images/subjectQuestions', subject)"
+          >
+              Bilder {{subject}}
+          </router-link>
+        </div>
         <router-view></router-view>
       </div>
     </div>
@@ -83,6 +45,16 @@ export default {
       }
       return false;
     },
+    getUrl(url, subject) {
+      return url.replace('subject', subject);
+    }
+  },
+  data: () => {
+    return {
+      subjects: [
+        '1t', 'fysikk1', 'geo', 'kjemi1', 'kjemi2', 'naturfag', 's1',
+      ]
+    };
   },
 };
 </script>

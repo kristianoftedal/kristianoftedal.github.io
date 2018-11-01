@@ -22,6 +22,8 @@
             to="/form/naturfagQuestions">Nye spørsmål Naturfag</router-link>
           <router-link class="button"
             to="/readlist/naturfagQuestions">Leselisten Naturfag</router-link>
+          <router-link class="button"
+            to="/images/kjemi1Questions">Bilder i Naturfag</router-link>
           <hr/>
         </div>
           <h5>Kjemi 1</h5>
@@ -43,6 +45,8 @@
             to="/form/kjemi2Questions">Nye spørsmål Kjemi 2</router-link>
           <router-link class="button"
             to="/readlist/kjemi2Questions">Leselisten Kjemi 2</router-link>
+          <router-link class="button"
+            to="/images/kjemi2Questions">Bilder i Kjemi 2</router-link>
           <hr/>
         <div>
           <h5>1t</h5>
@@ -52,6 +56,8 @@
             to="/form/1tQuestions">Nye spørsmål 1t</router-link>
           <router-link class="button"
             to="/readlist/1tQuestions">Leselisten 1t</router-link>
+          <router-link class="button"
+            to="/images/1tQuestions">Bilder i 1t</router-link>
           <hr/>
         </div>
         <div>
@@ -62,6 +68,8 @@
             to="/form/s1Questions">Nye spørsmål s1</router-link>
           <router-link class="button"
             to="/readlist/s1Questions">Leselisten s1</router-link>
+          <router-link class="button"
+            to="/images/s1Questions">Bilder i s1</router-link>
           <hr/>
         </div>
         <div>
@@ -72,6 +80,8 @@
             to="/form/geoQuestions">Nye spørsmål Geografi</router-link>
           <router-link class="button"
             to="/readlist/geoQuestions">Leselisten Geografi</router-link>
+          <router-link class="button"
+            to="/images/geoQuestions">Bilder i Geografi</router-link>
           <hr/>
         </div>
         <div>
@@ -82,6 +92,8 @@
             to="/form/fysikk1">Nye spørsmål Fysikk 1</router-link>
           <router-link class="button"
             to="/readlist/fysikk1">Leselisten Fysikk 1</router-link>
+          <router-link class="button"
+            to="/images/fysikk1Questions">Bilder i Fysikk 1</router-link>
           <hr/>
         </div>
         <div>
@@ -92,6 +104,8 @@
             to="/form/r1">Nye spørsmål R1</router-link>
           <router-link class="button"
             to="/readlist/r1">Leselisten R1</router-link>
+          <router-link class="button"
+            to="/images/r1Questions">Bilder i R1</router-link>
           <hr/>
         </div>
         <div>
@@ -102,6 +116,8 @@
             to="/form/1p">Nye spørsmål 1P</router-link>
           <router-link class="button"
             to="/readlist/1p">Leselisten 1P</router-link>
+          <router-link class="button"
+            to="/images/1pQuestions">Bilder i 1p</router-link>
           <hr/>
         </div>
       </div>
