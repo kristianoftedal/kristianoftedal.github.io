@@ -23,7 +23,7 @@
           <router-link class="button"
             to="/readlist/naturfagQuestions">Leselisten Naturfag</router-link>
           <router-link class="button"
-            to="/images/kjemi1Questions">Bilder i Naturfag</router-link>
+            to="/images/naturfagQuestions">Bilder i Naturfag</router-link>
           <hr/>
         </div>
           <h5>Kjemi 1</h5>
@@ -87,11 +87,11 @@
         <div>
           <h5>Fysikk 1</h5>
           <router-link class="button"
-            to="/status/fysikk1">Oversikt Fysikk 1</router-link>
+            to="/status/fysikk1Questions">Oversikt Fysikk 1</router-link>
           <router-link class="button"
-            to="/form/fysikk1">Nye spørsmål Fysikk 1</router-link>
+            to="/form/fysikk1Questions">Nye spørsmål Fysikk 1</router-link>
           <router-link class="button"
-            to="/readlist/fysikk1">Leselisten Fysikk 1</router-link>
+            to="/readlist/fysikk1Questions">Leselisten Fysikk 1</router-link>
           <router-link class="button"
             to="/images/fysikk1Questions">Bilder i Fysikk 1</router-link>
           <hr/>
@@ -105,7 +105,7 @@
           <router-link class="button"
             to="/readlist/r1">Leselisten R1</router-link>
           <router-link class="button"
-            to="/images/r1Questions">Bilder i R1</router-link>
+            to="/images/r1">Bilder i R1</router-link>
           <hr/>
         </div>
         <div>
@@ -117,7 +117,7 @@
           <router-link class="button"
             to="/readlist/1p">Leselisten 1P</router-link>
           <router-link class="button"
-            to="/images/1pQuestions">Bilder i 1p</router-link>
+            to="/images/1p">Bilder i 1p</router-link>
           <hr/>
         </div>
       </div>
