@@ -11,6 +11,7 @@ import fiveA from '../../assets/kjemi1/5A.png';
 import fiveB from '../../assets/kjemi1/5B.png';
 import fiveC from '../../assets/kjemi1/5C.png';
 import fiveD from '../../assets/kjemi1/5D.png';
+import fiveE from '../../assets/kjemi1/5E.png';
 import sixA from '../../assets/kjemi1/6A.png';
 import sixB from '../../assets/kjemi1/6B.png';
 import sevenC from '../../assets/kjemi1/7C.png';
@@ -86,6 +87,11 @@ const images =
       id: '1a74ab6b-eab8-9e2f-e633-84cf0e61d299',
       image: '5D',
       src: fiveD,
+    },
+    {
+      id: '1287fdef7-b847-4ef3-bb51-a285d723fcdb',
+      image: '5E',
+      src: fiveE,
     },
     {
       id: '830cbf73-6553-7c02-0888-e6a2bfbefbe3',
