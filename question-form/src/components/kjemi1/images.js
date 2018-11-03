@@ -19,6 +19,10 @@ import eightC from '../../assets/kjemi1/8C.png';
 const images =
   [
     {
+      id: '34ac2fc7-515e-87b1-f845-7d5486e925c2',
+      image: '1A',
+    },
+    {
       id: '120239b3-8e47-a16f-5844-4ecb5bf186fb',
       image: '2A',
       src: twoA,
