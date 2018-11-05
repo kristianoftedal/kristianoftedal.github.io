@@ -24,6 +24,26 @@ const images =
       image: '1A',
     },
     {
+      id: 'ab64b318-df0b-3d31-d7d2-a1cae18b97b3',
+      image: '1B',
+    },
+    {
+      id: 'dc5c690d-feda-b80c-b654-2b8e529df49b',
+      image: '1C',
+    },
+    {
+      id: 'efbb162f-b390-d57e-b250-bfd679d1c594',
+      image: '1D',
+    },
+    {
+      id: '99b6262c-d902-e1d8-5ddd-0d1f4f1851b5',
+      image: '1E',
+    },
+    {
+      id: '52ae6578-1c32-0792-7dd5-bf10e696c55f',
+      image: '1F',
+    },
+    {
       id: '120239b3-8e47-a16f-5844-4ecb5bf186fb',
       image: '2A',
       src: twoA,
