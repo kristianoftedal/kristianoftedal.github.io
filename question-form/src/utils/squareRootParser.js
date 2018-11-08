@@ -11,9 +11,9 @@ const squareRootParser = (question) => {
       const tempParts = parts[i].split('√');
       if (tempParts[0] === '') {
         restructuredText.push('<span class="squareRoot">√</span>');
-        restructuredText.push(`<span class="squareRoot">${tempParts[1]}</span>`);
+        restructuredText.push(`<span class="squareRoot">${formulaParser(tempParts[1])}</span>`);
       } else {
-        restructuredText.push(`<span class="squareRoot">${tempParts[0]}</span>`);
+        restructuredText.push(`<span class="squareRoot">${formulaParser(tempParts[0])}</span>`);
         restructuredText.push('<span class="squareRoot">√</span>');
       }
       postSquareRoot = i + 2;

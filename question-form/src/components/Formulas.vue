@@ -63,7 +63,7 @@
           <tr>
             <td>Combo #4</td>
             <td>√$*x-2^2|*$</td>
-            <td><span v-html="textParser('√$ *x-2^2|* $')"></span></td>
+            <td><span v-html="textParser('*x_2|* = √$ *x-2^2|* $ fordi *x^2|* bla bla')"></span></td>
           </tr>
         </tbody>
       </table>
