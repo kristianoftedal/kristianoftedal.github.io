@@ -13,6 +13,9 @@
           <button v-on:click="clickFilter(null)">
             ingen kategori, takk
           </button>
+          <button v-on:click="clickFilter('free')">
+            ingen kategori, takk
+          </button>
           <button v-on:click="clickFilter('lost')">
             glemt/gammel kategori
           </button>
@@ -217,6 +220,7 @@ import prettyPrint from '../utils/prettyPrint';
 import getImages from '../utils/imageHelper';
 import db from '../firebase';
 import getCategories from '../utils/categoryHelper';
+import freeQuestionsHelper from '../utils/freeQuestionsHelper';
 // import replace from './replace';
 
 export default {
@@ -246,7 +250,11 @@ export default {
             q.category === ' ' ||
             !this.categories.includes(q.category),
         );
+      } else if (this.categoryFilter === 'lost') {
+        const freeQuestions = freeQuestionsHelper.getFreeQuestions(this.dbRef);
+        list = list.filter(e => freeQuestions.indexOf(e.id) > -1);
       }
+
       if (this.search !== '') {
         list = list.filter(q =>
           q.questionText.indexOf(this.search) > -1 || q.imageId.indexOf(this.search) > -1);

@@ -164,6 +164,7 @@ import notie from 'notie';
 import css from 'notie/dist/notie.min.css'; // eslint-disable-line
 import db from '../firebase';
 import getCategories from '../utils/categoryHelper';
+import freeQuestionsHelper from '../utils/freeQuestionsHelper';
 import getImages from '../utils/imageHelper';
 import prettyPrint from '../utils/prettyPrint';
 // import freeQuestions from './naturfag/freeQuestions';
@@ -241,7 +242,8 @@ export default {
       notie.alert({ type: 1, text: 'Spørsmål slettet 😀' });
     },
     downloadFile() {
-      const questions = this.questions;
+      const freeQuestions = freeQuestionsHelper(this.dbRef);
+      const questions = this.questions.filter(x => freeQuestions.indexOf(x.id) >= 0);
 
       const fileName = 'questions.json';
       let data = 'data:text/json;charset=utf-8,@';
