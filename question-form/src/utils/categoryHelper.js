@@ -7,6 +7,7 @@ import fysikk1Categories from '../components/fysikk1/categories';
 import s1Categories from '../components/s1/categories';
 import onePCategories from '../components/1p/categories';
 import r1Categories from '../components/r1/categories';
+import bio1Categories from '../components/bio1/categories';
 
 
 const getCategories = (subject) => {
@@ -38,8 +39,13 @@ const getCategories = (subject) => {
     return r1Categories;
   }
   if (subject.indexOf('1p') > -1) {
-    debugger;
     return onePCategories;
+  }
+  if (subject.indexOf('1p') > -1) {
+    return onePCategories;
+  }
+  if (subject.indexOf('bio1') > -1) {
+    return bio1Categories;
   }
   return null;
 };
