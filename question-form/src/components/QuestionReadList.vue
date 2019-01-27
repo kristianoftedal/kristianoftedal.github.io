@@ -278,6 +278,7 @@ export default {
         list = list.filter(
           q =>
             q.questionText.indexOf(this.search) > -1 ||
+            q.explanation.indexOf(this.search) > -1 ||
             q.imageId.indexOf(this.search) > -1
         );
       }

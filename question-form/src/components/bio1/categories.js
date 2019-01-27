@@ -1,5 +1,5 @@
 const categories = [
-  'Økologi, atferdsbiologi og taksanomi',
+  'Økologi, atferdsbiologi og taksonomi',
   'Cellens oppbygning og membrantransport',
   'Planters formering',
   'Planteanatomi og -fysiologi',
