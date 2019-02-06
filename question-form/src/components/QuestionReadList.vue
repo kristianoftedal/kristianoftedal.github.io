@@ -247,7 +247,8 @@ export default {
   props: ["dbRef"],
   firebase() {
     return {
-      questions: db.ref(this.dbRef)
+      questions: db.ref(this.dbRef),
+      bio1Questions: db.ref('bio1Questions')
     };
   },
   computed: {
@@ -282,6 +283,22 @@ export default {
             q.imageId.indexOf(this.search) > -1
         );
       }
+
+      debugger;
+      // for (let i = 0; i < this.questions.length; i++) {
+      //   const question = this.questions[i];
+      //   if (question.category === 'Økologi og bærekraftig utvikling'
+      //     && this.bio1Questions.filter(e => e.id !== question.id).length === 0) {
+      //       debugger;
+      //       question.category = 'Planters formering';
+      //       const key = question[".key"];
+      //         delete question[".key"]; // eslint-disable-line
+      //         db.ref('bio1Questions')
+      //           .child(key)
+      //           .update(question);
+      //     }
+
+      // }
 
       return list;
     }
