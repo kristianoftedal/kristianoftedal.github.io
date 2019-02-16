@@ -11,7 +11,7 @@
             v-bind:key="category"
           >{{category}}</button>
           <button v-on:click="clickFilter(null)">ingen kategori, takk</button>
-          <button v-on:click="clickFilter('free')">ingen kategori, takk</button>
+          <button v-on:click="clickFilter('free')">gratis</button>
           <button v-on:click="clickFilter('lost')">glemt/gammel kategori</button>
         </div>
       </div>
@@ -233,6 +233,7 @@
 </template>
 
 <script>
+import uuid from "uuid/v1";
 import notie from "notie";
 import css from "notie/dist/notie.min.css"; // eslint-disable-line
 import prettyPrint from "../utils/prettyPrint";
@@ -270,7 +271,7 @@ export default {
             q.category === " " ||
             !this.categories.includes(q.category)
         );
-      } else if (this.categoryFilter === "lost") {
+      } else if (this.categoryFilter === 'free') {
         const freeQuestions = freeQuestionsHelper.getFreeQuestions(this.dbRef);
         list = list.filter(e => freeQuestions.indexOf(e.id) > -1);
       }
@@ -284,20 +285,15 @@ export default {
         );
       }
 
-      debugger;
+      // debugger;
       // for (let i = 0; i < this.questions.length; i++) {
       //   const question = this.questions[i];
-      //   if (question.category === 'Økologi og bærekraftig utvikling'
-      //     && this.bio1Questions.filter(e => e.id !== question.id).length === 0) {
-      //       debugger;
-      //       question.category = 'Planters formering';
-      //       const key = question[".key"];
-      //         delete question[".key"]; // eslint-disable-line
-      //         db.ref('bio1Questions')
-      //           .child(key)
-      //           .update(question);
-      //     }
-
+      //   if (question.category === 'Ernæring, fordøyelse og helse') {
+      //     const clone = Object.assign({}, question);
+      //     clone.category = 'Humanfysiologi';
+      //     delete clone[".key"]; // eslint-disable-line
+      //     db.ref('bio1Questions').push(clone);
+      //   }
       // }
 
       return list;

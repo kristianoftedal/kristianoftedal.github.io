@@ -15,7 +15,6 @@ Vue.config.productionTip = false;
 
 let app = '';
 firebase.auth().onAuthStateChanged(() => {
-  debugger;
   if (!app) {
     /* eslint-disable no-new */
     app = new Vue({

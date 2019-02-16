@@ -44,7 +44,6 @@ export default {
       this.categoryFilter = filter;
     },
     getReadableImageName(src) {
-      debugger;
       if (!src) return '';
       const splitted = src.split('/');
       const temp  =splitted[splitted.length - 1];
