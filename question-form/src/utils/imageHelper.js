@@ -8,6 +8,7 @@ import s1Images from '../components/s1/images';
 import r1Images from '../components/r1/images';
 import onePImages from '../components/1p/images';
 import bio1Images from '../components/bio1/images';
+import bio2Images from '../components/bio2/images';
 
 const getImages = (subject) => {
   if (subject.indexOf('naturfag') > -1) {
@@ -42,6 +43,9 @@ const getImages = (subject) => {
   }
   if (subject.indexOf('bio1') > -1) {
     return bio1Images;
+  }
+  if (subject.indexOf('bio2') > -1) {
+    return bio2Images;
   }
   return null;
 };

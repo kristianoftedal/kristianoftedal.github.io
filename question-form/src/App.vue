@@ -50,7 +50,8 @@ export default {
         "kjemi2",
         "naturfag",
         "s1",
-        "bio1"
+        "bio1",
+        "bio2",
       ]
     };
   }

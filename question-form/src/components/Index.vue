@@ -91,6 +91,14 @@
           <router-link class="button" to="/images/bio1Questions">Bilder i Bio1</router-link>
           <hr>
         </div>
+        <div>
+          <h5>Bio2</h5>
+          <router-link class="button" to="/status/bio2Questions">Oversikt Bio2</router-link>
+          <router-link class="button" to="/form/bio2Questions">Nye spørsmål Bio2</router-link>
+          <router-link class="button" to="/readlist/bio2Questions">Leselisten Bio2</router-link>
+          <router-link class="button" to="/images/bio2Questions">Bilder i Bio2</router-link>
+          <hr>
+        </div>
       </div>
     </div>
   </div>

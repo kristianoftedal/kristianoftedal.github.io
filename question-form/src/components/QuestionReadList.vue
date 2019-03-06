@@ -288,11 +288,11 @@ export default {
       // debugger;
       // for (let i = 0; i < this.questions.length; i++) {
       //   const question = this.questions[i];
-      //   if (question.category === 'Ernæring, fordøyelse og helse') {
+      //   if (question.category === 'DNA, proteinsyntese og arv' || question.category === 'Cellens oppbygning og membrantransport') {
       //     const clone = Object.assign({}, question);
-      //     clone.category = 'Humanfysiologi';
+      //     clone.category = 'DNA';
       //     delete clone[".key"]; // eslint-disable-line
-      //     db.ref('bio1Questions').push(clone);
+      //     db.ref('bio2Questions').push(clone);
       //   }
       // }
 

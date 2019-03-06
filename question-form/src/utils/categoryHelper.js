@@ -8,6 +8,7 @@ import s1Categories from '../components/s1/categories';
 import onePCategories from '../components/1p/categories';
 import r1Categories from '../components/r1/categories';
 import bio1Categories from '../components/bio1/categories';
+import bio2Categories from '../components/bio2/categories';
 
 
 const getCategories = (subject) => {
@@ -46,6 +47,9 @@ const getCategories = (subject) => {
   }
   if (subject.indexOf('bio1') > -1) {
     return bio1Categories;
+  }
+  if (subject.indexOf('bio2') > -1) {
+    return bio2Categories;
   }
   return null;
 };
