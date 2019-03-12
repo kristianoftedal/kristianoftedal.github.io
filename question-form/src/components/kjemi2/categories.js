@@ -1,4 +1,9 @@
 const categories = [
-  'DNA',
+  'Buffere',
+  'Uorganisk kjemi',
+  'Organisk kjemi og polymerere',
+  'Redoksreaksjoner',
+  'Elektrokjemi',
+  'Næringsstoffer og biokjemi',
 ];
 export default categories;

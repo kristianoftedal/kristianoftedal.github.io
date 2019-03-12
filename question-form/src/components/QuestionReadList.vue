@@ -285,12 +285,11 @@ export default {
         );
       }
 
-      // debugger;
       // for (let i = 0; i < this.questions.length; i++) {
       //   const question = this.questions[i];
-      //   if (question.category === 'DNA, proteinsyntese og arv' || question.category === 'Cellens oppbygning og membrantransport') {
+      //   if (question.category === 'Økologi og bærekraftig utvikling') {
       //     const clone = Object.assign({}, question);
-      //     clone.category = 'DNA';
+      //     clone.category = 'Populasjonsbiologi og stoffenes kretsløp';
       //     delete clone[".key"]; // eslint-disable-line
       //     db.ref('bio2Questions').push(clone);
       //   }
