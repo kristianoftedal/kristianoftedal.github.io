@@ -70,6 +70,13 @@ export default {
           questions,
         });
       }
+      const valueArr = pureImages.map(item =>  item.id);
+      const isDuplicate = valueArr.some((item, idx) =>{
+        debugger;
+          if (valueArr.indexOf(item, idx + 1) !== -1) {
+            console.log(item);
+          }
+      });
       return images;
     },
   },
