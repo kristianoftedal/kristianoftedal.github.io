@@ -6,5 +6,6 @@ const categories = [
   'Biotek',
   'Evolusjon',
   'Populasjonsbiologi og stoffenes kretsløp',
+  'Økologi',
 ];
 export default categories;
