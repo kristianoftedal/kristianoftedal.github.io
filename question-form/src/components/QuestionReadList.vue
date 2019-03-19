@@ -285,16 +285,6 @@ export default {
         );
       }
 
-      // for (let i = 0; i < this.questions.length; i++) {
-      //   const question = this.questions[i];
-      //   if (question.category === 'Cellens oppbygning og membrantransport') {
-      //     const clone = Object.assign({}, question);
-      //     clone.category = 'Evolusjon';
-      //     delete clone[".key"]; // eslint-disable-line
-      //     db.ref('bio2Questions').push(clone);
-      //   }
-      // }
-
       return list;
     }
   },
