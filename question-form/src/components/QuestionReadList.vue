@@ -285,6 +285,20 @@ export default {
         );
       }
 
+      // debugger;
+      // for (let i = 0; i < this.questions.length; i++) {
+      //   const question = this.questions[i];
+      //   if (question.category === 'Elektristet og teknologi') {
+      //     question.category = 'Elektrisitet og teknologi';
+      //     const key = question[".key"];
+      //     delete question[".key"]; // eslint-disable-line
+      //     db.ref(this.dbRef)
+      //       .child(key)
+      //       .update(question);
+
+      //   }
+      // }
+
       return list;
     }
   },
