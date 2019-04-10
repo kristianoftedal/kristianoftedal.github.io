@@ -1,41 +1,91 @@
-import twoE from '../../assets/bio1/2E.png';
-import twoF from '../../assets/bio1/2F.png';
-import threeC from '../../assets/bio1/3C.png';
-import threeD from '../../assets/bio1/3D.png';
-import threeE from '../../assets/bio1/3E.png';
-import fourE from '../../assets/bio1/4E.png';
-import nineB from '../../assets/bio1/9B.png';
-import nineC from '../../assets/bio1/9C.png';
-import nineD from '../../assets/bio1/9D.png';
-import nineE from '../../assets/bio1/9E.png';
-import nineF from '../../assets/bio1/9F.png';
-import nineG from '../../assets/bio1/9G.png';
-import nineH from '../../assets/bio1/9H.png';
-import nineI from '../../assets/bio1/9I.png';
-import tenA from '../../assets/bio1/10A.png';
-import tenB from '../../assets/bio1/10B.png';
+import oneA from '../../assets/bio2/1A.png';
+import oneB from '../../assets/bio2/1B.png';
+import oneC from '../../assets/bio2/1C.png';
+import oneD from '../../assets/bio2/1D.png';
+import oneE from '../../assets/bio2/1E.png';
+import oneG from '../../assets/bio2/1G.png';
+import twoB from '../../assets/bio2/2B.png';
+import twoC from '../../assets/bio2/2C.png';
+import threeA from '../../assets/bio2/3A.png';
+import threeB from '../../assets/bio2/3B.png';
+import threeC from '../../assets/bio2/3C.png';
+import threeD from '../../assets/bio2/3D.png';
+import threeE from '../../assets/bio2/3E.png';
+import fourA from '../../assets/bio2/4A.png';
+import fourB from '../../assets/bio2/4B.png';
+import fourC from '../../assets/bio2/4C.png';
+import fourD from '../../assets/bio2/4D.png';
+import fourE from '../../assets/bio2/4E.png';
+import fourF from '../../assets/bio2/4F.png';
+import fourG from '../../assets/bio2/4G.png';
+import fourH from '../../assets/bio2/4H.png';
+import fiveA from '../../assets/bio2/5A.png';
+import fiveB from '../../assets/bio2/5B.png';
+import fiveC from '../../assets/bio2/5C.png';
+import fiveD from '../../assets/bio2/5D.png';
+import fiveE from '../../assets/bio2/5E.png';
+import fiveF from '../../assets/bio2/5F.png';
+import fiveG from '../../assets/bio2/5G.png';
+import fiveH from '../../assets/bio2/5H.png';
+import fiveI from '../../assets/bio2/5I.png';
+import sixA from '../../assets/bio2/6A.png';
+import sixB from '../../assets/bio2/6B.png';
+import sixC from '../../assets/bio2/6C.png';
+import sixD from '../../assets/bio2/6D.png';
+import sixE from '../../assets/bio2/6E.png';
+import sevenA from '../../assets/bio2/7A.png';
+import sevenB from '../../assets/bio2/7B.png';
+import sevenC from '../../assets/bio2/7C.png';
+import sevenD from '../../assets/bio2/7D.png';
+import sevenE from '../../assets/bio2/7E.png';
+import sevenF from '../../assets/bio2/7F.png';
+import eightA from '../../assets/bio2/8A.png';
+import eightB from '../../assets/bio2/8B.png';
+import eightC from '../../assets/bio2/8C.png';
+import eightD from '../../assets/bio2/8D.png';
+import eightE from '../../assets/bio2/8E.png';
+import eightF from '../../assets/bio2/8F.png';
+import eightG from '../../assets/bio2/8G.png';
+import eightH from '../../assets/bio2/8H.png';
+import eightI from '../../assets/bio2/8I.png';
+import eightJ from '../../assets/bio2/8J.png';
+import eightK from '../../assets/bio2/8K.png';
+import eightL from '../../assets/bio2/8L.png';
+import eightM from '../../assets/bio2/8M.png';
+import nineA from '../../assets/bio2/9A.png';
+import nineB from '../../assets/bio2/9B.png';
+import nineC from '../../assets/bio2/9C.png';
+import nineD from '../../assets/bio2/9D.png';
+import nineE from '../../assets/bio2/9E.png';
+import nineF from '../../assets/bio2/9F.png';
+import nineG from '../../assets/bio2/9G.png';
 
 const images =
   [
     {
       id: '34ac2fc7-515e-87b1-f845-7d5486e925c2',
       image: '1A',
+      src: oneA,
     },
     {
       id: 'ab64b318-df0b-3d31-d7d2-a1cae18b97b3',
       image: '1B',
+      src: oneB,
     },
     {
       id: 'dc5c690d-feda-b80c-b654-2b8e529df49b',
       image: '1C',
+      src: oneC,
     },
     {
       id: 'efbb162f-b390-d57e-b250-bfd679d1c594',
       image: '1D',
+      src: oneD,
     },
     {
       id: '99b6262c-d902-e1d8-5ddd-0d1f4f1851b5',
       image: '1E',
+      src: oneE,
     },
     {
       id: '52ae6578-1c32-0792-7dd5-bf10e696c55f',
@@ -44,6 +94,7 @@ const images =
     {
       id: '95ce8160-d363-4580-94eb-eb420133fade',
       image: '1G',
+      src: oneG,
     },
     {
       id: '9edb1824-7cbd-4b47-a093-0cf5da482925',
@@ -76,10 +127,12 @@ const images =
     {
       id: '9820aada-6048-3689-1c2f-4917c96a8e72',
       image: '2B',
+      src: twoB,
     },
     {
       id: '083cc46c-0f2e-5153-33cb-895f1d163089',
       image: '2C',
+      src: twoC,
     },
     {
       id: '599cd425-769a-43ee-ebd3-638517a1a3d8',
@@ -88,12 +141,10 @@ const images =
     {
       id: '4eeb5079-9400-ce95-8ce9-251a19c4c7ff',
       image: '2E',
-      src: twoE,
     },
     {
       id: '58ffd4fe-6164-4b81-ab93-18bf62df2867',
       image: '2F',
-      src: twoF,
     },
     {
       id: 'a5862413-484b-4a48-8dc9-3fb0a8deb800',
@@ -126,10 +177,12 @@ const images =
     {
       id: '4f63e580-1f4c-b83f-002e-38164e4b73b7',
       image: '3A',
+      src: threeA,
     },
     {
       id: '206ee370-cdf5-9450-2a11-e412c81494e4',
       image: '3B',
+      src: threeB,
     },
     {
       id: '5b88e514-2745-c42d-3fc5-ebdad6faa6ca',
@@ -181,18 +234,22 @@ const images =
     {
       id: '3abc4bed-5bef-0a1f-f1fa-e05572d19cf2',
       image: '4A',
+      src: fourA,
     },
     {
       id: 'e59ebf96-f9d4-3497-3151-a57990e34cd9',
       image: '4B',
+      src: fourB,
     },
     {
       id: 'cbf1e124-a1f8-dfd8-1b31-2b7b7b56f94d',
       image: '4C',
+      src: fourC,
     },
     {
       id: '40d456ee-7ab7-1c7f-a551-0a8b9eeed40b',
       image: '4D',
+      src: fourD,
     },
     {
       id: '7aa57515-ed58-30ef-e9fb-13bb415f1e68',
@@ -202,14 +259,17 @@ const images =
     {
       id: 'c6e3cd19-5f49-490c-8bb6-7b904683df04',
       image: '4F',
+      src: fourF,
     },
     {
       id: '6a31461c-385c-4c9d-ae0f-47a1e8a1621b',
       image: '4G',
+      src: fourG,
     },
     {
       id: 'c6b48008-d4e0-48a4-b5cc-bef8f5b52140',
       image: '4H',
+      src: fourH,
     },
     {
       id: 'b272e458-f9a0-4531-8461-1d0946b6b0b1',
@@ -234,38 +294,47 @@ const images =
     {
       id: '4bec8672-4b8e-83a6-cec0-b982d3fc66b2',
       image: '5A',
+      src: fiveA,
     },
     {
       id: 'cf7f11cb-faa8-9e56-f6f5-3b6a7294e14e',
       image: '5B',
+      src: fiveB,
     },
     {
       id: '7a290b4d-3620-d838-0603-c4a6a78a54d9',
       image: '5C',
+      src: fiveC,
     },
     {
       id: '1a74ab6b-eab8-9e2f-e633-84cf0e61d299',
       image: '5D',
+      src: fiveD,
     },
     {
       id: 'c0582781-1baa-4fc6-8c50-f5b43a0a3456',
       image: '5E',
+      src: fiveE,
     },
     {
       id: '945fec29-8ec2-42f9-999f-2c3733c70d69',
       image: '5F',
+      src: fiveF,
     },
     {
       id: '2c23454c-0402-4d5b-8019-0a2e0713a20e',
       image: '5G',
+      src: fiveG,
     },
     {
       id: 'cb36e8f7-a72b-4496-9e89-055e64bbc453',
       image: '5H',
+      src: fiveH,
     },
     {
       id: 'c6d4c390-5533-4631-b8fe-bb16fdefecf2',
       image: '5I',
+      src: fiveI,
     },
     {
       id: '1bdfdb17-217b-4662-955d-9b0fbd568303',
@@ -286,22 +355,27 @@ const images =
     {
       id: '830cbf73-6553-7c02-0888-e6a2bfbefbe3',
       image: '6A',
+      src: sixA,
     },
     {
       id: '92d1bf3c-2971-ff1e-6ec8-06d2273806b4',
       image: '6B',
+      src: sixB,
     },
     {
       id: 'bd5ef54f-7b8c-78f8-9c16-9c9e5ae189c3',
       image: '6C',
+      src: sixC,
     },
     {
       id: '1855c32a-f055-fced-fce0-d4232fe65ea7',
       image: '6D',
+      src: sixD,
     },
     {
       id: 'd329d230-2f16-41e2-b670-619fa4e26b3e',
       image: '6E',
+      src: sixE,
     },
     {
       id: '56bea9ab-81b9-4b63-9900-8520b4c4b38a',
@@ -338,26 +412,32 @@ const images =
     {
       id: '3ab75eb6-fb3d-5cc8-1f0c-4a09ca44428a',
       image: '7A',
+      src: sevenA,
     },
     {
       id: '1d8e0213-59e9-efc7-8c76-a4e9c0f84d25',
       image: '7B',
+      src: sevenB,
     },
     {
       id: 'c383f31f-2837-7387-c46e-420d34b77015',
       image: '7C',
+      src: sevenC,
     },
     {
       id: 'f6957b32-9509-c509-6b70-37d324d0b9f4',
       image: '7D',
+      src: sevenD,
     },
     {
       id: '13c45c82-836c-3818-a03d-cd16ff5a1225',
       image: '7E',
+      src: sevenE,
     },
     {
       id: 'd884699d-3c8f-52f1-6efe-b60f0fbe10ce',
       image: '7F',
+      src: sevenF,
     },
     {
       id: 'f232c868-f91d-47f1-bf70-7705e133b77f',
@@ -390,58 +470,72 @@ const images =
     {
       id: '094c0bcb-b950-90fc-d89b-3642bb03befd',
       image: '8A',
+      src: eightA,
     },
     {
       id: '3e9b02a4-1291-432f-a9aa-70dd8d41e3a4',
       image: '8B',
+      src: eightB,
     },
     {
       id: 'e64dee49-981b-345f-ec76-e2462d35b41a',
       image: '8C',
+      src: eightC,
     },
     {
       id: '889598d1-0081-5f83-73f5-8de0bead676e',
       image: '8D',
+      src: eightD,
     },
     {
       id: '9fe93828-6b15-02e5-e4c8-3a006d7d11ec',
       image: '8E',
+      src: eightE,
     },
     {
       id: '3b10e2b6-393a-4b88-9af3-011f14e3bd7a',
       image: '8F',
+      src: eightF,
     },
     {
       id: '9e528943-6d96-4a6c-93e0-2a0d347bc094',
       image: '8G',
+      src: eightG,
     },
     {
       id: 'aa1c4ea2-dccf-43fd-99c0-02ae3fdeba42',
       image: '8H',
+      src: eightH,
     },
     {
       id: 'b8a845bb-de6a-4ae4-b4b2-375c5057ddb9',
       image: '8I',
+      src: eightI,
     },
     {
       id: 'c9019dd5-eeac-4324-a16f-99611c8689fe',
       image: '8J',
+      src: eightJ,
     },
     {
       id: '92921ad9-314f-43b6-b41a-911ef2f5cade',
       image: '8K',
+      src: eightK,
     },
     {
       id: '994ceba4-b5c0-4401-b49c-8e2bc90916d4',
       image: '8L',
+      src: eightL,
     },
     {
       id: '3f664612-5e88-4629-b0b6-0deb1769418d',
       image: '8M',
+      src: eightM,
     },
     {
       id: 'f4e6f6fa-9d1b-c61d-8994-d9a76b462957',
       image: '9A',
+      src: nineA,
     },
     {
       id: 'b650838f-ef5a-aac4-b6b5-3e5edbbb7abe',
@@ -476,12 +570,10 @@ const images =
     {
       id: '4a37cd15-fe6d-4fc8-a27b-42387cfb2c1f',
       image: '9H',
-      src: nineH,
     },
     {
       id: 'fb342078-1be5-45c0-878e-f46134d84eaa',
       image: '9I',
-      src: nineI,
     },
     {
       id: '6b38fc0d-9f8e-462c-8ba9-6ab07a20a457',
@@ -502,12 +594,10 @@ const images =
     {
       id: '1f579906-455f-27da-0385-d34677e4abf6',
       image: '10A',
-      src: tenA,
     },
     {
       id: '78e0db0f-ebcd-3c85-f4b3-3017190d5ab4',
       image: '10B',
-      src: tenB,
     },
     {
       id: 'f8a6d750-071c-c5b2-1655-61ecd1682f69',
