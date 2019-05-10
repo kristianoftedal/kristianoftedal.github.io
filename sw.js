@@ -2,40 +2,48 @@ importScripts('/_nuxt/workbox.4c4f5ca6.js')
 
 workbox.precaching.precacheAndRoute([
   {
-    "url": "/_nuxt/325037545cf03638e7fe.js",
-    "revision": "48f5d6a1166a0d0e75c69583a2fcacea"
+    "url": "/_nuxt/03522b72586883f051dc.js",
+    "revision": "1fa15e1089a19367eb29d7f089e3f186"
   },
   {
-    "url": "/_nuxt/3704d02d2d83edde6dae.js",
-    "revision": "148e6d3f117b594f8b5e3c306dc2e08f"
+    "url": "/_nuxt/1681b4b04080ecd119e4.js",
+    "revision": "4d01d81a05593aeec09673b2c689097f"
   },
   {
-    "url": "/_nuxt/a2efa80484506c3754f6.js",
-    "revision": "00005a4b3bfb1db723ae47460f5c768e"
+    "url": "/_nuxt/173b3ef8fc65e01343ef.js",
+    "revision": "b6c412a52f1060c18cb32dc13bee007d"
+  },
+  {
+    "url": "/_nuxt/179a254da22ddd65d0a0.js",
+    "revision": "7c163a8b5ccc188183145226e1e547af"
+  },
+  {
+    "url": "/_nuxt/4a130ce68abf858e320f.js",
+    "revision": "1c685b2720f9cf86a137906c1ffa11e0"
+  },
+  {
+    "url": "/_nuxt/78d1c4593f9f467e9aa8.js",
+    "revision": "18476aaa8e5fa0c41dc1b84e83b75b97"
+  },
+  {
+    "url": "/_nuxt/a0560da71414f33c875c.js",
+    "revision": "708854d667f5eff914852d0fa9e1e816"
+  },
+  {
+    "url": "/_nuxt/aae98cbcfc252e2e48d8.js",
+    "revision": "a64e32aa14f6d6c947069eded18531a8"
+  },
+  {
+    "url": "/_nuxt/aba3c45d2d49bc918c1f.js",
+    "revision": "c4fbd30fd3248ac1dd23b2fe62a634ca"
   },
   {
     "url": "/_nuxt/abd0834f5be32f482ec9.js",
     "revision": "2033f9e89805a04c2e87fefbe45446ee"
   },
   {
-    "url": "/_nuxt/c0b58a0a7ea7292d916d.js",
-    "revision": "cb1ab6fe765d68967cf63022e6b55e1c"
-  },
-  {
-    "url": "/_nuxt/c0fee2d932d53509cef1.js",
-    "revision": "ad5a8ea9fec96d36b81ed29497162547"
-  },
-  {
-    "url": "/_nuxt/da976b13646024c3e52d.js",
-    "revision": "a751d032d30a356d6972a152a7254119"
-  },
-  {
-    "url": "/_nuxt/db5d118654acc161e87d.js",
-    "revision": "eaabf112fe67dd01adfef27e320ee7eb"
-  },
-  {
-    "url": "/_nuxt/f6956256a2b485139482.js",
-    "revision": "543bde2de717e3f2ca20ce5c46395a21"
+    "url": "/_nuxt/ea6e1be52e7c7b3ba1ea.js",
+    "revision": "547f64a297492700786428ee488755ab"
   }
 ], {
   "cacheId": "kjemia-web",

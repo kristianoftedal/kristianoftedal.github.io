@@ -250,12 +250,11 @@ export default {
     downloadFile() {
       // const freeQuestions = freeQuestionsHelper(this.dbRef);
       // const questions = this.questions.filter(x => freeQuestions.indexOf(x.id) >= 0);
-      debugger;
       const questions = this.questions;
+      debugger;
       const fileName = "questions.json";
       let data = "data:text/json;charset=utf-8,";
       data += encodeURI(JSON.stringify(questions));
-      debugger;
       const downloadAnchorNode = document.createElement("a");
       downloadAnchorNode.setAttribute("href", data);
       downloadAnchorNode.setAttribute("download", fileName);

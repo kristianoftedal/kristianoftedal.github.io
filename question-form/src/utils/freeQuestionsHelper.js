@@ -7,6 +7,8 @@ import fysikk1freeQuestions from '../components/fysikk1/freeQuestions';
 import s1freeQuestions from '../components/s1/freeQuestions';
 import onePfreeQuestions from '../components/1p/freeQuestions';
 import r1freeQuestions from '../components/r1/freeQuestions';
+import bio1FreeQuestions from '../components/bio1/freeQuestions';
+import bio2FreeQuestions from '../components/bio2/freeQuestions';
 
 
 const getFreeQuestions = (subject) => {
@@ -39,6 +41,12 @@ const getFreeQuestions = (subject) => {
   }
   if (subject.indexOf('1p') > -1) {
     return onePfreeQuestions;
+  }
+  if (subject.indexOf('bio1') > -1) {
+    return bio1FreeQuestions;
+  }
+  if (subject.indexOf('bio2') > -1) {
+    return bio2FreeQuestions;
   }
   return null;
 };
